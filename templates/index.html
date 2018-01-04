@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head> 
+        <link href="{{ url_for('static', filename='css/reset.css') }}" rel='stylesheet' type='text/css' />
+
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+
+
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav>
+
+            <div class="nav-wrapper">
+                <a href="http://www.snd.org"><img src="{{ url_for('static', filename='img/snd_logo.png') }}"></a>
+
+                <h1>38th Best of News Design</h1>
+
+                <button>
+                    <p>SHARE</p>
+                </button>
+            </div>
+           
+            
+        </nav>
+        <article>
+            <div class="grid">
+                <div class="grid-sizer"></div>
+                <div class="gutter-sizer"></div>
+                {% for obj in object_list %}
+                <div class="grid-item">
+                   
+                   <a href="{{ obj.ref }}/"><img src="static/img/entries_lowResolution/{{ obj.ref }}.jpg" onerror="this.style.display='none'"/></a>
+                    
+                   <!-- <a href="{{ obj.ref }}/"><img src="static/img/entries_lowResolution/{{ obj.ref }}A.jpg" onerror="this.style.display='none'"/></a>
+                   -->
+                   
+                   <!-- <a href="{{ obj.ref }}/"><img src="static/img/ajax-loader.gif"data-src="static/img/entries_lowResolution/{{ obj.ref }}.jpg" onerror="this.style.display='none'"/></a>
+                    
+                   <a href="{{ obj.ref }}/"><img src="static/img/ajax-loader.gif"data-src="static/img/entries_lowResolution/{{ obj.ref }}A.jpg" onerror="this.style.display='none'"/></a>
+                  -->
+                    
+                    <div class="text">
+                   
+                    <a href="{{ obj.ref }}/">{{ obj.ref }}</a>
+
+                    <h2>{{ obj.general_category }}</h2>
+                    <p> <span class="bold"> {{ obj.award }}           </span> {{ obj.specific_category }} </p>
+                    <br>
+                    <p> <span class="bold">{{ obj.publication }}</span> </p> 
+                    <p> <span class="bold"> {{ obj.city }} </span> {{ obj.country }} </p>
+                    <p> <span class="bold"> {{ obj.name1 }} </span> {{ obj.title1 }}</p>
+                    <p> <span class="bold"> {{ obj.name2 }} </span> {{ obj.title2 }}</p>
+                    <p> <span class="bold"> {{ obj.name3 }} </span> {{ obj.title3 }}</p>
+                    <p> <span class="bold"> {{ obj.name4 }} </span> {{ obj.title4 }}</p>
+                    <p> <span class="bold"> {{ obj.name5 }} </span> {{ obj.title5 }}</p>
+                    <p> <span class="bold"> {{ obj.name6 }} </span> {{ obj.title6 }}</p>
+                    <p> <span class="bold"> {{ obj.name7 }} </span> {{ obj.title7 }}</p>
+                    <p> <span class="bold"> {{ obj.name8 }} </span> {{ obj.title8 }}</p>
+                    <p> <span class="bold"> {{ obj.name9 }} </span> {{ obj.title9 }}</p>
+                    <p> <span class="bold"> {{ obj.name10 }} </span> {{ obj.title10 }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </article>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='js/Underscore.js') }}"></script>
+        
+        <script type="text/javascript" src="{{ url_for('static', filename='js/isotope.pkgd.min.js') }}"></script>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='js/packery-mode.pkgd.min.js') }}"></script>
+        
+         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.unveil.js') }}"></script>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+
+    </body>
+</html>
