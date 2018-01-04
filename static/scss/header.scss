@@ -1,0 +1,24 @@
+@import 'imports';
+
+nav{
+	background-color: $snd-blue;
+	width: auto;
+	height: 40vh;
+	position: relative;
+}
+
+.nav-wrapper{
+	background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,.7));
+	display: inline;
+	vertical-align: bottom;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 1em 0 1em 1em;
+	img{
+		max-height: 30px;
+		margin: 0 0 1em 0;
+	}
+}
+

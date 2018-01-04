@@ -1,0 +1,41 @@
+@import 'imports';
+
+article{
+	padding: 1em;
+	// display: flex;
+	// flex-wrap: wrap;
+	// justify-content: space-between;
+}
+
+.grid {
+  background: #DDD;
+  max-width: 1200px;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-item {
+  // color: white;
+  padding: 5px;
+  float: right;
+  width: 30%;
+  margin: 0 0% 2% 2%;
+  height: auto;
+  
+  img{
+    width: 100%;
+  }
+}
+
+.text{
+  background: white;
+  border: 2px solid white;
+  // border-radius: 25px;
+}

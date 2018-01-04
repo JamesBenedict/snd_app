@@ -1,0 +1,11 @@
+referenceNumber, imageLink, generalCategory, award, specificCategory, publication, city, designer1, role1, designer2, role2, designer3, role3, designer4, role4, designer5, role5, designer6, role6, designer7, role7, designer8, role8, designer9, role9, designer10, role10
+
+
+
+2001, img/2001, Page Design [Staff Portfolio], Award of Excellence, Combination 175,000 and over, Washington, D.C., Amanda Soto, Art Director
+
+
+open excel
+change column headers
+remove unused columns
+strip weird text

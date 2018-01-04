@@ -1,0 +1,8 @@
+h1, h2, h3, h4, h5, h6, p, li, a, th, td, tr {
+  font-family: 'Lato', sans-serif;
+  color: red;
+  font-size: 20px; }
+
+h1 {
+  size: 30px;
+  font-size: 90; }
