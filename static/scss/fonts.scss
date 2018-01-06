@@ -32,12 +32,13 @@ button{
 	// border-color: $snd-blue;
 	border-radius: 4px;
 	background-color: $snd-blue;
-	width: 6em;
+	width: auto;
 	height: 2em;
 	text-align: center;
 	font-size: 1em;
 	display: inline-block;
 	color: white;
+	padding: 0 5px 0 5px;
 }
 button:hover{
 	background-color: $snd-dark-blue;

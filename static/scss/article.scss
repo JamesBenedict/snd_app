@@ -1,15 +1,15 @@
 @import 'imports';
 
 article{
-	padding: 1em;
+	padding: 0 2.5% 0 2.5%;
 	// display: flex;
 	// flex-wrap: wrap;
 	// justify-content: space-between;
 }
 
 .grid {
-  background: #DDD;
-  max-width: 1200px;
+  // background: #DDD;
+  max-width: 100%;
 }
 
 /* clear fix */
@@ -19,23 +19,51 @@ article{
   clear: both;
 }
 
-/* ---- .grid-item ---- */
-
 .grid-item {
-  // color: white;
-  padding: 5px;
-  float: right;
-  width: 30%;
-  margin: 0 0% 2% 2%;
+  width: 44%;
+  margin: 2.5% 5% 2.5% 0%;
   height: auto;
+  border: 2px solid #eee;
+  border-radius: 5px;
+
   
   img{
     width: 100%;
   }
 }
 
+// .gutter-sizer{
+//   width: 2.5%;
+// }
+
 .text{
   background: white;
-  border: 2px solid white;
-  // border-radius: 25px;
+  padding: 1em;
+
 }
+
+
+
+
+@include for-size(tablet-portrait) {
+    
+}
+
+@include for-size(tablet-landscape) {
+    .grid-item{
+      width: 30%;
+      margin: 1% 1% 1% 1%;
+    }
+}
+
+@include for-size(desktop) {
+    .grid-item{
+      width: 23%;
+      margin: 1% 1% 1% 1%;
+    }
+}
+
+@include for-size(large-desktop) {
+    
+}
+

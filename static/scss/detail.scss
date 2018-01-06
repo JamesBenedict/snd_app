@@ -1,0 +1,28 @@
+@import 'imports';
+
+figure{
+	img{
+		width: 100%;
+		display: none;
+	}
+}
+
+.text{
+	max-width: 500px;
+}
+
+@include for-size(tablet-portrait) {
+    
+}
+
+@include for-size(tablet-landscape) {
+    
+}
+
+@include for-size(desktop) {
+
+}
+
+@include for-size(large-desktop) {
+    
+}
