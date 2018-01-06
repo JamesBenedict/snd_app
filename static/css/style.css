@@ -22,19 +22,20 @@ button {
   border: 1px solid transparent;
   border-radius: 4px;
   background-color: #748FA4;
-  width: 6em;
+  width: auto;
   height: 2em;
   text-align: center;
   font-size: 1em;
   display: inline-block;
-  color: white; }
+  color: white;
+  padding: 0 5px 0 5px; }
 
 button:hover {
   background-color: #304659; }
 
 nav {
   background-color: #748FA4;
-  width: auto;
+  width: 100%;
   height: 40vh;
   position: relative; }
 
@@ -46,17 +47,18 @@ nav {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 1em 0 1em 1em; }
+  padding: 1em 0 1em 0; }
   .nav-wrapper img {
     max-height: 30px;
     margin: 0 0 1em 0; }
+  .nav-wrapper a, .nav-wrapper h1, .nav-wrapper button {
+    margin-left: 2.5%; }
 
 article {
-  padding: 1em; }
+  padding: 0 2.5% 0 2.5%; }
 
 .grid {
-  background: #DDD;
-  max-width: 1200px; }
+  max-width: 100%; }
 
 /* clear fix */
 .grid:after {
@@ -64,16 +66,28 @@ article {
   display: block;
   clear: both; }
 
-/* ---- .grid-item ---- */
 .grid-item {
-  padding: 5px;
-  float: right;
-  width: 30%;
-  margin: 0 0% 2% 2%;
-  height: auto; }
+  width: 44%;
+  margin: 2.5% 5% 2.5% 0%;
+  height: auto;
+  border: 2px solid #eee;
+  border-radius: 5px; }
   .grid-item img {
     width: 100%; }
 
 .text {
   background: white;
-  border: 2px solid white; }
+  padding: 1em; }
+
+@media (min-width: 900px) {
+  .grid-item {
+    width: 30%;
+    margin: 1% 1% 1% 1%; } }
+
+@media (min-width: 1200px) {
+  .grid-item {
+    width: 23%;
+    margin: 1% 1% 1% 1%; } }
+
+figure > img {
+  width: 100%; }
