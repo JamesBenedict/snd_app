@@ -27,4 +27,14 @@ $('.button-group').each( function( i, buttonGroup ) {
 });
 
 
+$('#button-top-scroll').click(function(){
+  // document.body.scrollTop = document.documentElement.scrollTop = 0;
+  // $('html').slideUp();
+
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+
+  console.log('test scroll tops')
+
+})
+
 
