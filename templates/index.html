@@ -26,21 +26,24 @@
             
         </nav>
         <article>
-            <div class="button-group sort-by-button-group">
-                <h2>Filter by category</h2>
-                <button class="button" data-sort-value="ref">ref</button>
+
+            <div class="sorter">
+                <div class="button-group sort-by-button-group">
+                    <h2>Filter by category</h2>
+                    <button class="button" data-sort-value="ref">ref</button>
+                </div>
+
+                <div class="button-group filters-button-group">
+                    <h2>Filter by publication</h2>
+                   <button class="button">New York Times</button>
+
+
+                   <h2>Filter by category</h2> 
+                    <button class="button">World's Best Designed</button>
+
+                </div>
+            <!-- end of sorter -->
             </div>
-
-            <div class="button-group filters-button-group">
-                <h2>Filter by publication</h2>
-               <button class="button">New York Times</button>
-
-
-               <h2>Filter by Category</h2> 
-
-               <h2></h2> 
-            </div>
-
             
 
             <div class="grid">
@@ -77,7 +80,9 @@
                 </div>
                 {% endfor %}
             </div>
+    
 
+        <button id="button-top-scroll">Scroll to top</button>
         </article>
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
 
