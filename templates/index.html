@@ -27,8 +27,21 @@
         </nav>
         <article>
             <div class="button-group sort-by-button-group">
+                <h2>Filter by category</h2>
                 <button class="button" data-sort-value="ref">ref</button>
             </div>
+
+            <div class="button-group filters-button-group">
+                <h2>Filter by publication</h2>
+               <button class="button">New York Times</button>
+
+
+               <h2>Filter by Category</h2> 
+
+               <h2></h2> 
+            </div>
+
+            
 
             <div class="grid">
                 {% for obj in object_list %}
@@ -39,23 +52,27 @@
                     
                     <div class="text">
                    
-                    <a href="{{ obj.ref }}/" class="ref">{{ obj.ref }}</a>
+                        <a href="{{ obj.ref }}/" class="ref">{{ obj.ref }}</a>
 
-                    <h2>{{ obj.general_category }}</h2>
-                    <p> <span class="bold"> {{ obj.award }}           </span> {{ obj.specific_category }} </p>
-                    <br>
-                    <p> <span class="bold">{{ obj.publication }}</span> </p> 
-                    <p> <span class="bold"> {{ obj.city }} </span> {{ obj.country }} </p>
-                    <p> <span class="bold"> {{ obj.name1 }} </span> {{ obj.title1 }}</p>
-                    <p> <span class="bold"> {{ obj.name2 }} </span> {{ obj.title2 }}</p>
-                    <p> <span class="bold"> {{ obj.name3 }} </span> {{ obj.title3 }}</p>
-                    <p> <span class="bold"> {{ obj.name4 }} </span> {{ obj.title4 }}</p>
-                    <p> <span class="bold"> {{ obj.name5 }} </span> {{ obj.title5 }}</p>
-                    <p> <span class="bold"> {{ obj.name6 }} </span> {{ obj.title6 }}</p>
-                    <p> <span class="bold"> {{ obj.name7 }} </span> {{ obj.title7 }}</p>
-                    <p> <span class="bold"> {{ obj.name8 }} </span> {{ obj.title8 }}</p>
-                    <p> <span class="bold"> {{ obj.name9 }} </span> {{ obj.title9 }}</p>
-                    <p> <span class="bold"> {{ obj.name10 }} </span> {{ obj.title10 }}</p>
+                        <h2>{{ obj.general_category }}</h2>
+                        <p> <span class="bold"> {{ obj.award }}           </span> {{ obj.specific_category }} </p>
+                        <br>
+
+                        <p><span class="bold"> {{ obj.publication }}</span></p> 
+                        <p>  {{ obj.city }}, {{ obj.country }} </p>
+
+                        <br>
+
+                        <p>  <span class="bold">{{ obj.name1 }} </span> {{ obj.title1 }}</p>
+                        <p> <span class="bold"> {{ obj.name2 }} </span> {{ obj.title2 }}</p>
+                        <p> <span class="bold"> {{ obj.name3 }} </span> {{ obj.title3 }}</p>
+                        <p> <span class="bold"> {{ obj.name4 }} </span> {{ obj.title4 }}</p>
+                        <p> <span class="bold"> {{ obj.name5 }} </span> {{ obj.title5 }}</p>
+                        <p> <span class="bold"> {{ obj.name6 }} </span> {{ obj.title6 }}</p>
+                        <p> <span class="bold"> {{ obj.name7 }} </span> {{ obj.title7 }}</p>
+                        <p> <span class="bold"> {{ obj.name8 }} </span> {{ obj.title8 }}</p>
+                        <p> <span class="bold"> {{ obj.name9 }} </span> {{ obj.title9 }}</p>
+                        <p> <span class="bold"> {{ obj.name10 }} </span> {{ obj.title10 }}</p>
                     </div>
                 </div>
                 {% endfor %}
