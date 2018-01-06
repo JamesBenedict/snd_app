@@ -26,25 +26,20 @@
             
         </nav>
         <article>
+            <div class="button-group sort-by-button-group">
+                <button class="button" data-sort-value="ref">ref</button>
+            </div>
+
             <div class="grid">
-                <div class="grid-sizer"></div>
-                <div class="gutter-sizer"></div>
                 {% for obj in object_list %}
-                <div class="grid-item">
+                <div class="grid-item" data-category="ref">
                    
                    <a href="{{ obj.ref }}/"><img src="static/img/entries_lowResolution/{{ obj.ref }}.jpg" onerror="this.style.display='none'"/></a>
                     
-                   <!-- <a href="{{ obj.ref }}/"><img src="static/img/entries_lowResolution/{{ obj.ref }}A.jpg" onerror="this.style.display='none'"/></a>
-                   -->
-                   
-                   <!-- <a href="{{ obj.ref }}/"><img src="static/img/ajax-loader.gif"data-src="static/img/entries_lowResolution/{{ obj.ref }}.jpg" onerror="this.style.display='none'"/></a>
-                    
-                   <a href="{{ obj.ref }}/"><img src="static/img/ajax-loader.gif"data-src="static/img/entries_lowResolution/{{ obj.ref }}A.jpg" onerror="this.style.display='none'"/></a>
-                  -->
                     
                     <div class="text">
                    
-                    <a href="{{ obj.ref }}/">{{ obj.ref }}</a>
+                    <a href="{{ obj.ref }}/" class="ref">{{ obj.ref }}</a>
 
                     <h2>{{ obj.general_category }}</h2>
                     <p> <span class="bold"> {{ obj.award }}           </span> {{ obj.specific_category }} </p>
@@ -69,13 +64,13 @@
         </article>
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
 
-        <script type="text/javascript" src="{{ url_for('static', filename='js/Underscore.js') }}"></script>
-        
+     <!--    <script type="text/javascript" src="{{ url_for('static', filename='js/Underscore.js') }}"></script>
+         -->
         <script type="text/javascript" src="{{ url_for('static', filename='js/isotope.pkgd.min.js') }}"></script>
 
         <script type="text/javascript" src="{{ url_for('static', filename='js/packery-mode.pkgd.min.js') }}"></script>
         
-         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.unveil.js') }}"></script>
+   <!--       <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.unveil.js') }}"></script> -->
 
         <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
 
