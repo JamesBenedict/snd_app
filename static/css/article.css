@@ -1,7 +1,11 @@
 article {
   padding: 0 2.5% 0 2.5%; }
 
+.sorter {
+  background: #cccccc; }
+
 .grid {
+  background: #DDD;
   max-width: 100%; }
 
 /* clear fix */
@@ -12,7 +16,7 @@ article {
 
 .grid-item {
   width: 44%;
-  margin: 2.5% 5% 2.5% 0%;
+  margin: 0% 5% 5% 0%;
   height: auto;
   border: 2px solid #eee;
   border-radius: 5px; }
@@ -23,12 +27,31 @@ article {
   background: white;
   padding: 1em; }
 
-@media (min-width: 900px) {
+#button-top-scroll {
+  position: fixed;
+  left: 0;
+  bottom: 15%;
+  z-index: 1000;
+  margin-left: 2.5%; }
+
+@media (min-width: 600px) {
+  .sorter {
+    width: 25%;
+    margin-right: 5%;
+    display: inline-block;
+    float: left; }
+  .grid {
+    width: 70%;
+    display: inline-block; }
   .grid-item {
-    width: 30%;
-    margin: 1% 1% 1% 1%; } }
+    width: 31%;
+    margin: 0% 1% 1% 0%; } }
 
 @media (min-width: 1200px) {
+  .sorter {
+    width: 15%; }
+  .grid {
+    width: 80%; }
   .grid-item {
     width: 23%;
-    margin: 1% 1% 1% 1%; } }
+    margin: 0 1% 1% 0%; } }
