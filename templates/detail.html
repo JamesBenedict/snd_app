@@ -9,11 +9,13 @@
     <body>
 
         <figure>
-    	   <a href="static/img/entries/{{ object.ref }}.jpg/"></a><img src="/static/img/entries/{{ object.ref }}.jpg" onerror="this.style.display='none'"/>
+    	   <a href="/static/img/entries/{{ object.ref }}.jpg/"><img src="/static/img/entries/{{ object.ref }}.jpg" onerror="this.style.display='none'"/></a>
+            <figcaption><a href="/static/img/entries/{{ object.ref }}.jpg/">View fullscreen image</a>
+            </figcaption>
         </figure>
         <!-- <a href="{{ object.ref }}/"><img src="/static/img/entries/{{ object.ref }}A.jpg" onerror="this.style.display='none'"/></a> -->
 
-        <div class="text">
+        <div class="details_text">
 
                         <h2>{{ object.general_category }}</h2>
                         <p> <span class="bold"> {{ object.award }}           </span> {{ object.specific_category }} </p>

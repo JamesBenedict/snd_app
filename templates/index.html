@@ -35,7 +35,12 @@
 
                 <div class="button-group filters-button-group">
                     <h2>Filter by publication</h2>
-                   <button class="button">New York Times</button>
+                   
+                    <button class="button" data-filter="*">Show All</button>
+
+                    <button class="button" data-filter="Times">New York Times</button>
+
+                    <button class="button" data-filter="Parool">Het Parool</button>
 
 
                    <h2>Filter by category</h2> 
@@ -48,7 +53,7 @@
 
             <div class="grid">
                 {% for obj in object_list %}
-                <div class="grid-item" data-category="ref">
+                <div class="grid-item">
                    
                    <a href="{{ obj.ref }}/"><img src="static/img/entries_lowResolution/{{ obj.ref }}.jpg" onerror="this.style.display='none'"/></a>
                     
@@ -61,7 +66,7 @@
                         <p> <span class="bold"> {{ obj.award }}           </span> {{ obj.specific_category }} </p>
                         <br>
 
-                        <p><span class="bold"> {{ obj.publication }}</span></p> 
+                        <p class="name"><span class="bold"> {{ obj.publication }}</span></p> 
                         <p>  {{ obj.city }}, {{ obj.country }} </p>
 
                         <br>
