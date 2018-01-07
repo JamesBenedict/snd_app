@@ -1,5 +1,6 @@
 h1, h2, h3, h4, h5, h6, p, li, a, th, td, tr {
-  font-family: 'Lato', sans-serif; }
+  font-family: 'Lato', sans-serif;
+  hyphens: auto; }
 
 h1 {
   font-size: 2em;
@@ -9,8 +10,7 @@ h1 {
   color: white; }
 
 h2 {
-  font-size: 1.5em;
-  line-height: 1.5em; }
+  font-size: 1.5em; }
 
 p {
   line-height: 1.5em; }
@@ -18,17 +18,24 @@ p {
 .bold {
   font-weight: 700; }
 
+a {
+  text-decoration: none;
+  color: #748FA4; }
+  a:hover {
+    text-decoration: underline;
+    color: #304659; }
+
 button {
   border: 1px solid transparent;
   border-radius: 4px;
   background-color: #748FA4;
-  width: auto;
-  height: 2em;
-  text-align: center;
+  width: 175px;
+  height: auto;
+  text-align: left;
   font-size: 1em;
   display: inline-block;
   color: white;
-  padding: 0 5px 0 5px; }
+  padding: 5px 10px 5px 10px; }
 
 button:hover {
   background-color: #304659; }
