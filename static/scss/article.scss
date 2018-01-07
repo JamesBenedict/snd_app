@@ -43,10 +43,9 @@ article{
 #button-top-scroll{
   position: fixed;
   left: 0;
-  bottom: 15%;
+  bottom: 0%;
+  width: 100%;
   z-index: 1000;
-  margin-left: 2.5%;
-
 }
 
 @include for-size(tablet-portrait) {
@@ -65,10 +64,17 @@ article{
       width: 31%;
       margin: 0% 1% 1% 0%;
     }
+
+    #button-top-scroll{
+    left: 0;
+    bottom: 15%;
+    width: 175px;
+    margin-left: 2.5%;
+  }
 }
 
 @include for-size(tablet-landscape) {
-
+  
 }
 
 @include for-size(desktop) {

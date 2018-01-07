@@ -2,6 +2,7 @@
 
 h1,h2,h3,h4,h5,h6,p,li,a,th,td,tr{
 	font-family: 'Lato', sans-serif;
+	hyphens: auto;
 }
 
 h1{
@@ -15,7 +16,7 @@ h1{
 h2{
 	font-size: 1.5em;
 	// margin-bottom: .25em;
-	line-height: 1.5em;
+	// line-height: 1.5em;
 }
 
 p{
@@ -26,19 +27,28 @@ p{
 	font-weight: 700;
 }
 
+a{
+	text-decoration: none;
+	color: $snd-blue;
+	&:hover{
+		text-decoration: underline;
+		color: $snd-dark-blue;
+	}
+}
+
 
 button{
 	border: 1px solid transparent;
 	// border-color: $snd-blue;
 	border-radius: 4px;
 	background-color: $snd-blue;
-	width: auto;
-	height: 2em;
-	text-align: center;
+	width: 175px;
+	height: auto;
+	text-align: left;
 	font-size: 1em;
 	display: inline-block;
 	color: white;
-	padding: 0 5px 0 5px;
+	padding: 5px 10px 5px 10px;
 }
 button:hover{
 	background-color: $snd-dark-blue;
