@@ -27,13 +27,17 @@
         </nav>
         <article>
 
-            <div class="sorter">
-                <div class="button-group sort-by-button-group">
-                    <h2>Filter by category</h2>
-                    <button class="button" data-sort-value="ref">ref</button>
-                </div>
+            <div class="sorter" >
+                <p><input type="text" id="quicksearch" placeholder="Search" /></p>
 
-                <div class="button-group filters-button-group">
+                <!-- <div id="filters" class="button-group">
+                    <h2>Filter by category</h2>
+
+                    <button class="button" data-filter="*">All</button>
+                    <button class="button" data-filter=".test">test</button>
+                </div>
+ -->
+               <!--  <div class="button-group filters-button-group">
                     <h2>Filter by publication</h2>
                    
                     <button class="button" data-filter="*">Show All</button>
@@ -46,12 +50,15 @@
                    <h2>Filter by category</h2> 
                     <button class="button">World's Best Designed</button>
 
-                </div>
+                </div> -->
             <!-- end of sorter -->
             </div>
             
 
             <div class="grid">
+                <div class="grid-item test">
+                    <p>yo</p>
+                </div>
                 {% for obj in object_list %}
                 <div class="grid-item">
                    
