@@ -22,11 +22,6 @@ path = os.getcwd() + '/'
 snd_data = pd.read_csv('static/snd_winners.csv', encoding = 'ISO-8859-1')
 # snd_data = pd.read_csv('static/snd_winners.csv', encoding = 'mac_latin2')
 
-
-# def data_test():
-	# print(snd_data[0])
-	# print(snd_data.head(1000))
-
 def null_format(item):
 	if pd.isnull(item):
 		item = ""
@@ -67,6 +62,62 @@ def country_format(country):
 		country = country.capitalize()
 	return country
 
+def award_format(award):
+	award = null_format(award)
+	if award.strip() == "World's Best-Designed":
+		award = "World's Best-Designed"
+	elif award.strip() == "World's Best-DesignedÂª":
+		award = "World's Best-Designed"
+	elif award.strip() == "World's Best-Designedª":
+		award = "World's Best-Designed"
+	elif award.strip() == "World's Best-DesignedÂ":
+		award = "World's Best-Designed"
+	else:
+		award = award 
+	return award
+
+def award_sinlge_word_format(award):
+	award_single_word = ""
+	if award.strip() == "World's Best-Designed":
+		award_single_word = "WBD"
+	elif award.strip() == "World's Best-DesignedÂª":
+		award_single_word = "WBD"
+	elif award.strip() == "World's Best-Designedª":
+		award_single_word = "WBD"
+	elif award.strip() == "World's Best-DesignedÂ":
+		award_single_word = "WBD"
+	elif award.strip() == "Award of Excellence & JSR":
+		award_single_word = "AEJSR"
+	elif award.strip() == "JSR (Overall)":
+		award_single_word = "JSR"
+	elif award.strip() == "Award of Excellence":
+		award_single_word = "AE"
+	elif award.strip() == "Silver":
+		award_single_word = "S"
+	elif award.strip() == "Gold":
+		award_single_word = "G"
+	elif award.strip() == "Gold & JSR":
+		award_single_word = "GJSR"
+	return award_single_word
+
+def award_weight_format(award):
+	award_weight = 8
+	if award == "WBD":
+		award_weight = 1
+	elif award == "GJSR":
+		award_weight = 2
+	elif award == "G":
+		award_weight = 3
+	elif award == "S":
+		award_weight = 4
+	elif award == "JSR":
+		award_weight = 5
+	elif award == "AEJSR":
+		award_weight = 6
+	elif award == "AE":
+		award_weight = 7
+	return award_weight
+
 def general_category_format(category):
 	category = category.replace('[', ', ')
 	category = category.replace(']', '')
@@ -75,6 +126,62 @@ def general_category_format(category):
 		category = "World's Best-Designed"
 		print('flag')
 	return category
+
+def category_single_word_format(category):
+	category_single_word = ""
+	if category == "World's Best-Designed":
+		category_single_word = "WBD"
+	elif category == "Miscellaneous":
+		category_single_word = "MIS"
+	elif category == "Opinion Design":
+		category_single_word = "OPD"
+	elif category == "Special News Topics":
+		category_single_word = "SNT"
+	elif category == "Special Sections":
+		category_single_word = "SPS"
+	elif category == "News Design, Pages":
+		category_single_word = "NDP"
+	elif category.strip() == "Photography, Multiple Photos":
+		category_single_word ="PMP"
+	elif category == "Photography, Single Photos":
+		category_single_word = "PSP"
+	elif category == "Page Design, Individual Portfolio":
+		category_single_word = "PDP"
+	elif category == "Special Coverage":
+		category_single_word = "SPC"
+	elif category == "Combination Print & Digital":
+		category_single_word = "CPD"
+	elif category == "Information Graphics, Single":
+		category_single_word = "IGS"
+	elif category == "Editorial Cartoons":
+		category_single_word = "EDC"
+	elif category == "Features Design, Pages":
+		category_single_word = "FDP"
+	elif category == "Breaking News Topics":
+		category_single_word = "BNT"
+	elif category == "Illustration":
+		category_single_word = "ILL"
+	elif category == "Multiple Illustrations":
+		category_single_word = "MIL"
+	elif category == "Page Design, Staff Portfolio":
+		category_single_word = "PDS"
+	elif category == "Reprints":
+		category_single_word = "RPR"
+	elif category == "Magazines":
+		category_single_word = "MAG"
+	elif category == "Information Graphics, Multiple":
+		category_single_word = "IGM"
+	elif category == "Features Design, Sections":
+		category_single_word = "FDS"
+	elif category == "Redesigns":
+		category_single_word = "RED"
+	elif category == "News Design, Sections":
+		category_single_word = "NDS"
+	elif category.strip() == "Opinion":
+		category_single_word = "OPI"
+	elif category == "Opinion section":
+		category_single_word = "OPS"
+	return category_single_word
 
 def item_formater():
 	# loops through the data and formats each column item correctly
@@ -89,11 +196,18 @@ def item_formater():
 		# print(row['state'])
 		row['country'] = country_format(row['country'])
 		# print(row['country'])
-		row['award'] = null_format(row['award'])
+		# row['award'] = null_format(row['award'])
+		row['award'] = award_format(row['award'])
 		# print(row['award'])
+
+		row['award_single_word'] = award_sinlge_word_format(row['award'])
+		# print(row['award_single_word'])
+		row['award_weight'] = award_weight_format(row['award_single_word'])
 		row['general_category'] = general_category_format(row['general_category'])
 		# print(row['general_category'])
-		# print(row['specific_category'])
+
+		row['general_category_single_word'] = category_single_word_format(row['general_category'])
+		# print(row['general_category_single_word'])
 		
 		row['name1'] = null_format(row['name1']).strip()
 		row['name2'] = null_format(row['name2']).strip()
@@ -119,10 +233,10 @@ def item_formater():
 
 		
 		
-		snd_entry = [ row['ref'], row['publication'], row['city'], row['state'], row['country'], row['award'], row['general_category'], row['specific_category'], row['name1'], row['title1'], row['name2'], row['title2'], row['name3'], row['title3'], row['name4'], row['title4'], row['name5'], row['title5'], row['name6'], row['title6'], row['name7'], row['title7'], row['name8'], row['title8'], row['name9'], row['title9'], row['name10'], row['title10'] ]
+		snd_entry = [ row['ref'], row['publication'], row['city'], row['state'], row['country'], row['award'], row['award_single_word'], row['award_weight'], row['general_category'], row['general_category_single_word'], row['specific_category'], row['name1'], row['title1'], row['name2'], row['title2'], row['name3'], row['title3'], row['name4'], row['title4'], row['name5'], row['title5'], row['name6'], row['title6'], row['name7'], row['title7'], row['name8'], row['title8'], row['name9'], row['title9'], row['name10'], row['title10'] ]
 		data.append(snd_entry)	
 	# print(data)
-	snd_data_filtered = pd.DataFrame(data = data, index=None, columns=['ref', 'publication', 'city', 'state', 'country', 'award', 'general_category', 'specific_category', 'name1', 'title1', 'name2', 'title2', 'name3', 'title3', 'name4', 'title4', 'name5', 'title5', 'name6', 'title6', 'name7', 'title7', 'name8', 'title8', 'name9', 'title9', 'name10', 'title10'])
+	snd_data_filtered = pd.DataFrame(data = data, index=None, columns=['ref', 'publication', 'city', 'state', 'country', 'award', 'award_single_word', 'award_weight', 'general_category', 'general_category_single_word', 'specific_category', 'name1', 'title1', 'name2', 'title2', 'name3', 'title3', 'name4', 'title4', 'name5', 'title5', 'name6', 'title6', 'name7', 'title7', 'name8', 'title8', 'name9', 'title9', 'name10', 'title10'])
 
 	# print(snd_data_filtered.head())
 	snd_data_filtered.to_csv('snd_data_filtered.csv')
