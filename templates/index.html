@@ -2,11 +2,7 @@
 <html lang="en">
     <head> 
         <link href="{{ url_for('static', filename='css/reset.css') }}" rel='stylesheet' type='text/css' />
-
         <link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
-
-
-
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     </head>
 
@@ -15,9 +11,7 @@
 
             <div class="nav-wrapper">
                 <a href="http://www.snd.org"><img src="{{ url_for('static', filename='img/snd_logo.png') }}"></a>
-
                 <h1>38th Best of News Design</h1>
-
                 <button>
                     <p>SHARE</p>
                 </button>
@@ -26,41 +20,58 @@
             
         </nav>
         <article>
-
             <div class="sorter" >
+                <h2>Awards</h2>
                 <p><input type="text" id="quicksearch" placeholder="Search" /></p>
 
-                <!-- <div id="filters" class="button-group">
-                    <h2>Filter by category</h2>
-
-                    <button class="button" data-filter="*">All</button>
-                    <button class="button" data-filter=".test">test</button>
+                <div id="filters" class="button-group">
+                  <button class="button is-checked" data-filter="*">show all</button>
+                  <button class="button" data-filter=".WBD">World's Best Designed</button>
+                  <button class="button" data-filter=".G">Gold</button>
+                  <button class="button" data-filter=".S">Silver</button>
+                  <button class="button" data-filter=".AE">Award of Excellence</button>
                 </div>
- -->
-               <!--  <div class="button-group filters-button-group">
-                    <h2>Filter by publication</h2>
-                   
-                    <button class="button" data-filter="*">Show All</button>
-
-                    <button class="button" data-filter="Times">New York Times</button>
-
-                    <button class="button" data-filter="Parool">Het Parool</button>
-
-
-                   <h2>Filter by category</h2> 
-                    <button class="button">World's Best Designed</button>
-
-                </div> -->
             <!-- end of sorter -->
             </div>
             
-
+            <!-- container for isotope -->
             <div class="grid">
-                <div class="grid-item test">
-                    <p>yo</p>
+                <!-- class grid-item is for isotope -->
+                <!-- Buttons use the classes WBD, G, S, AE to filter -->
+                <div class="grid-item G">
+                    <p class="award_search">Gold
+                    </p>
+                    <p>Test phrase with World's Best Designed in it</p>
                 </div>
-                {% for obj in object_list %}
-                <div class="grid-item">
+
+                <div class="grid-item WBD">
+                    <p class="award_search">World's Best Designed</p>
+                    <p>xx</p>
+                </div>
+
+                <div class="grid-item S">
+                    <p class="award_search">Silver</p>
+                    <p>Test phrase with World's Best Designed in it</p>
+                </div>
+
+                <div class="grid-item AE">
+                    <p class="award_search">Award of Excellence</p>
+                    <p>Test phrase with World's Best Designed in it</p>
+                </div>
+
+                <div class="grid-item WBD">
+                    <p class="award_search">World's Best Designed</p>
+                    <p>yy</p>
+                </div>
+
+                <div class="grid-item G">
+                    <p class="award_search">Gold</p>
+                    <p>Test phrase with World's Best Designed in it</p>
+                </div>
+
+                <!-- Below is used for the actual app -->
+                <!-- {% for obj in object_list %}
+                <div class="grid-item {{ obj.award_single_word }}">
                    
                    <a href="{{ obj.ref }}/"><img src="static/img/entries_lowResolution/{{ obj.ref }}.jpg" onerror="this.style.display='none'"/></a>
                     
@@ -91,23 +102,17 @@
                     </div>
                 </div>
                 {% endfor %}
-            </div>
-    
+            </div> -->
 
-        <button id="button-top-scroll">Scroll to top</button>
+            <button id="button-top-scroll">Scroll to top</button>
         </article>
+
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
 
-     <!--    <script type="text/javascript" src="{{ url_for('static', filename='js/Underscore.js') }}"></script>
-         -->
         <script type="text/javascript" src="{{ url_for('static', filename='js/isotope.pkgd.min.js') }}"></script>
 
         <script type="text/javascript" src="{{ url_for('static', filename='js/packery-mode.pkgd.min.js') }}"></script>
-        
-   <!--       <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.unveil.js') }}"></script> -->
-
+    
         <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
-
-
     </body>
 </html>
