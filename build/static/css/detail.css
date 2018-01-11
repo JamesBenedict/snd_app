@@ -1,0 +1,10 @@
+figure img {
+  height: 90vh;
+  width: auto; }
+
+figure figcaption {
+  margin: 2em; }
+
+.details_text {
+  max-width: 400px;
+  margin: 2em; }

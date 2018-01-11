@@ -1,0 +1,32 @@
+@import 'imports';
+
+figure{
+	img{
+		height: 90vh;
+		width: auto;
+	}
+	figcaption{
+		margin: 2em;
+	}
+}
+
+.details_text{
+	max-width: 400px;
+	margin: 2em;
+}
+
+@include for-size(tablet-portrait) {
+    
+}
+
+@include for-size(tablet-landscape) {
+    
+}
+
+@include for-size(desktop) {
+
+}
+
+@include for-size(large-desktop) {
+    
+}
