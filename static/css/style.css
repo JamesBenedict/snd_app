@@ -27,9 +27,10 @@ a {
 
 button {
   border: 1px solid transparent;
+  border-color: #748FA4;
   border-radius: 4px;
   background-color: #748FA4;
-  width: 175px;
+  width: auto;
   height: auto;
   text-align: left;
   font-size: 1em;
@@ -95,7 +96,13 @@ article {
   left: 0;
   bottom: 0%;
   width: 100%;
-  z-index: 1000; }
+  z-index: 1000;
+  visibility: hidden; }
+
+.sorter button {
+  margin: 1em 0 1em 0;
+  display: block;
+  width: 100%; }
 
 @media (min-width: 600px) {
   .sorter {
@@ -112,7 +119,7 @@ article {
   #button-top-scroll {
     left: 0;
     bottom: 15%;
-    width: 175px;
+    width: auto;
     margin-left: 2.5%; } }
 
 @media (min-width: 1200px) {

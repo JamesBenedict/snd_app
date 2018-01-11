@@ -46,8 +46,16 @@ article{
   bottom: 0%;
   width: 100%;
   z-index: 1000;
+  visibility: hidden;
 }
 
+.sorter{
+  button{
+    margin: 1em 0 1em 0;
+    display: block;
+    width: 100%;
+  }
+}
 @include for-size(tablet-portrait) {
     .sorter{
       width: 25%;
@@ -68,7 +76,7 @@ article{
     #button-top-scroll{
     left: 0;
     bottom: 15%;
-    width: 175px;
+    width: auto;
     margin-left: 2.5%;
   }
 }

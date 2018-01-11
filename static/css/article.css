@@ -32,7 +32,13 @@ article {
   left: 0;
   bottom: 0%;
   width: 100%;
-  z-index: 1000; }
+  z-index: 1000;
+  visibility: hidden; }
+
+.sorter button {
+  margin: 1em 0 1em 0;
+  display: block;
+  width: 100%; }
 
 @media (min-width: 600px) {
   .sorter {
@@ -49,7 +55,7 @@ article {
   #button-top-scroll {
     left: 0;
     bottom: 15%;
-    width: 175px;
+    width: auto;
     margin-left: 2.5%; } }
 
 @media (min-width: 1200px) {
