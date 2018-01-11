@@ -1,0 +1,72 @@
+-sort database in python by award weight
+-add filters for categories
+-figure out what filters/sorts are needed
+
+Filters:
+	search for all
+	select as many awards as wanted
+	select as many categories as wanted
+	dropdown selection for designer
+	dropdown selection for publication
+
+sortby award weight
+
+
+new columns:
+	Xaward_sort_weight
+	Xaward_single_word
+	Xcategory_single_word
+	pub_single_name
+
+new data:
+	sort	
+		award sort weight:
+			World's Best-Designed:
+			Award of Excellence & JSR
+			JSR (Overall)
+			Award of Excellence
+			Silver
+			Gold
+			Gold & JSR
+	
+
+	filter
+		award:
+			World's Best-Designed:
+			Award of Excellence & JSR
+			JSR (Overall)
+			Award of Excellence
+			Silver
+			Gold
+			Gold & JSR
+
+		category 
+			World's Best-Designed™
+			Miscellaneous
+			Opinion Design
+			Special News Topics
+			Special Sections
+			News Design [Pages]
+			Photography [Multiple Photos]
+			Photography [Single Photos]
+			Page Design [Individual Portfolio]
+			Special Coverage
+			Combination Print & Digital
+			Information Graphics [Single]
+			Editorial Cartoons
+			Features Design [Pages]
+			Breaking News Topics
+			Illustration
+			Multiple Illustrations
+			Page Design [Staff Portfolio]
+			Reprints
+			Magazines
+			Information Graphics [Multiple]
+			Features Design [Sections]
+			Redesigns
+			News Design [Sections]
+			Opinion 
+			Opinion section
+
+		publication
+
