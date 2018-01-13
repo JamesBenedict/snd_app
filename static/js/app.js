@@ -12,40 +12,34 @@
 // globals
 var qsRegex;
 var buttonFilter;
-var searchField;
+var searchType = "";
+var searchField = "";
 
 // init Isotope https://isotope.metafizzy.co/
 var $grid = $('.grid').isotope({
   itemSelector: '.grid-item',
   layoutMode: 'packery',
-  // This is where I start to get lost
   filter: function() {
-    // "This" is the grid item AKA the entry
-    var $this = $('.award_search', this);
+    // console.log(searchType)
+
+    if (searchType == "awardSearch"){
+      var $searchField = $('.award_search', this);
+    } else if (searchType == "categorysearch") {
+      var $searchField = $('.category_search', this);
+    } else if (searchType == "publicationsearch"){
+      var $searchField = $('.publication_search', this);
+    } else if (searchField = "designersearch"){
+      var $searchField = $('.designer_search', this);
+    }
+
+    
+    
     // The console log below prints all the grid item's text in a seperate box
     // EX: "World's Best Designed XX" (next box) "Silver Test phrase with World's Best Designed in it" (next box) ...
-    console.log($this.text());
+    // console.log($this.text());
 
-    // This was added by me trying to limit the search to the text within a specific class
-    var $searchField = $('.award_search');
-    // The console Log below prints every entries' text contained in the .award_search class in one box
-    // EX: "World's Best DesignedSilverAward of ExcellenceWorld's Best DesignedGold"
-    // console.log($searchField.text())
-
-    // Below is the search that is too inclusive but works.
-    // I think this is what the code means
-    // If the search field's text (qsRegex) matches any text in the grid item ($this) return that item
-    // else return true (IDK what that means but it still seems to work if I change it to false?) 
-    var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
-    
-    // Below is what I thought would cause the search to only search the .award_search text
-    // But it returns every grid item as long as the searched term is in any of the .award_search text
-    // EX: so searching "Gold", "Silver", ... returns every result but searching "XX" returns nothing 
-    // I think its searching the string that is printed in the $searchField console log, which is: "World's Best DesignedSilverAward of ExcellenceWorld's Best DesignedGold"
-    // So if I could break up the string and limit it to a specific grid item's .award_search text
-    // then this might work, but IDK how to do limit the $searchField to one grid item
-    // var searchResult = qsRegex ? $searchField.text().match( qsRegex ) : true;
-
+   var searchResult = qsRegex ? $searchField.text().match( qsRegex ) : true;
+  
     // This assigns the results of the filter button, everything works here
     var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
     return searchResult && buttonResult;
@@ -59,13 +53,43 @@ $('#filters').on( 'click', 'button', function() {
 });
 
 // uses the value of the search field to filter
-var $quicksearch = $('#quicksearch').keyup( debounce( function() {
+var $awardsearch = $('#awardsearch').keyup( debounce( function() {
   // creates a search string from the search field 
   // g: returns every results, i: ignores case
-  qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+  qsRegex = new RegExp( $awardsearch.val(), 'gi' );
+  searchType = "awardSearch";
   // Calls the grid to layout again with the new search
   $grid.isotope();
+  return searchType;
 }) );
+
+var $categorysearch = $('#categorysearch').keyup( debounce( function() {
+  // creates a search string from the search field 
+  qsRegex = new RegExp( $categorysearch.val(), 'gi' );
+  searchType = "categorysearch";
+  // Calls the grid to layout again with the new search
+  $grid.isotope();
+  return searchType;
+}) );
+
+var $publicationsearch = $('#publicationsearch').keyup( debounce( function() {
+  // creates a search string from the search field 
+  qsRegex = new RegExp( $publicationsearch.val(), 'gi' );
+  searchType = "publicationsearch";
+  // Calls the grid to layout again with the new search
+  $grid.isotope();
+  return searchType;
+}) );
+
+var $designersearch = $('#designersearch').keyup( debounce( function() {
+  // creates a search string from the search field 
+  qsRegex = new RegExp( $designersearch.val(), 'gi' );
+  searchType = "designersearch";
+  // Calls the grid to layout again with the new search
+  $grid.isotope();
+  return searchType;
+}) );
+
 
 // change is-checked class on buttons
 $('.button-group').each( function( i, buttonGroup ) {
