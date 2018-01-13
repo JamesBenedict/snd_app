@@ -21,10 +21,10 @@ var $grid = $('.grid').isotope({
   // This is where I start to get lost
   filter: function() {
     // "This" is the grid item AKA the entry
-    var $this = $(this);
+    var $this = $('.award_search', this);
     // The console log below prints all the grid item's text in a seperate box
     // EX: "World's Best Designed XX" (next box) "Silver Test phrase with World's Best Designed in it" (next box) ...
-    // console.log($this.text());
+    console.log($this.text());
 
     // This was added by me trying to limit the search to the text within a specific class
     var $searchField = $('.award_search');
@@ -101,7 +101,7 @@ $('#button-top-scroll').click(function(){
 // hides button until down the page a bit
 $(function(){
     $(window).scroll(function() { 
-        if ($(this).scrollTop() > 500) { 
+        if ($(this).scrollTop() > 1500) { 
             $("#button-top-scroll:hidden").css('visibility','visible');   
             $("#button-top-scroll:hidden").fadeIn('slow');  
         } 
