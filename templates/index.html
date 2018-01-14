@@ -21,24 +21,59 @@
         </nav>
         <article>
             <div class="sorter" >
-                <h2>Awards</h2>
-                <p><input type="text" id="quicksearch" placeholder="Search" /></p>
+                <h2>Award</h2>
+                <p><input type="text" id="awardsearch" placeholder="Search Awards" /></p>
 
                 <div id="filters" class="button-group">
-                  <button class="button is-checked" data-filter="*">show all</button>
+                  <button class="button is-checked" data-filter="*">Show All</button>
                   <button class="button" data-filter=".WBD">World's Best Designed</button>
                   <button class="button" data-filter=".G">Gold</button>
                   <button class="button" data-filter=".S">Silver</button>
                   <button class="button" data-filter=".AE">Award of Excellence</button>
+
+                  <h2>Category</h2>
+                    <p><input type="text" id="categorysearch" placeholder="Search Categories" /></p>
+                    <button class="button" data-filter="*">Show All</button>
+                    <button class="button" data-filter=".BNT">Breaking News Topics</button>
+                    <button class="button" data-filter=".CPD">Combination Print & Digital</button>
+                    <button class="button" data-filter=".EDC">Editorial Cartoons</button>
+                    <button class="button" data-filter=".FDP">Features Design, Pages</button>
+                    <button class="button" data-filter=".FDS">Features Design, Sections</button> 
+                    <button class="button" data-filter=".ILL">Illustration</button>
+                    <button class="button" data-filter=".IGM">Information Graphics, Multiple</button>
+                    <button class="button" data-filter=".IGS">Information Graphics, Single</button>
+                    <button class="button" data-filter=".MIS">Miscellaneous</button>                    
+                    <button class="button" data-filter=".MIL">Multiple Illustrations</button>
+                    <button class="button" data-filter=".NDP">News Design, Pages</button>
+                    <button class="button" data-filter=".NDS">News Design, Sections</button>
+                    <button class="button" data-filter=".OPI">Opinion </button>
+                    <button class="button" data-filter=".OPD">Opinion Design</button>
+                    <button class="button" data-filter=".OPS">Opinion section</button>                    
+                    <button class="button" data-filter=".PDP">Page Design, Individual Portfolio</button>                    
+                    <button class="button" data-filter=".PDS">Page Design, Staff Portfolio</button>
+                    <button class="button" data-filter=".PMP">Photography, Multiple Photos</button>
+                    <button class="button" data-filter=".PSP">Photography, Single Photos</button>
+                    <button class="button" data-filter=".RED">Redesigns</button>
+                    <button class="button" data-filter=".RPR">Reprints</button>
+                    <button class="button" data-filter=".SPC">Special Coverage</button>
+                    <button class="button" data-filter=".SNT">Special News Topics</button>
+                    <button class="button" data-filter=".SPS">Special Sections</button>
+                    <button class="button" data-filter=".WBD">World's Best Designed</button>
+
+                    <h2>Publication</h2>
+                        <p><input type="text" id="publicationsearch" placeholder="Search Publications" /></p>
+
+                    <h2>Designer</h2>
+                        <p><input type="text" id="designersearch" placeholder="Search Designers" /></p>
+
+        
                 </div>
             <!-- end of sorter -->
             </div>
             
             <!-- container for isotope -->
             <div class="grid">
-                <!-- class grid-item is for isotope -->
-                <!-- Buttons use the classes WBD, G, S, AE to filter -->
-                <div class="grid-item G">
+                <!-- <div class="grid-item G">
                     <p class="award_search">Gold
                     </p>
                     <p>Test phrase with World's Best Designed in it</p>
@@ -67,11 +102,11 @@
                 <div class="grid-item G">
                     <p class="award_search">Gold</p>
                     <p>Test phrase with World's Best Designed in it</p>
-                </div>
+                </div> -->
 
                 <!-- Below is used for the actual app -->
-                <!-- {% for obj in object_list %}
-                <div class="grid-item {{ obj.award_single_word }}">
+                {% for obj in object_list %}
+                <div class="grid-item {{ obj.award_single_word }} {{ obj.general_category_single_word }}">
                    
                    <a href="{{ obj.ref }}/"><img src="static/img/entries_lowResolution/{{ obj.ref }}.jpg" onerror="this.style.display='none'"/></a>
                     
@@ -80,29 +115,29 @@
                    
                         <a href="{{ obj.ref }}/" class="ref">{{ obj.ref }}</a>
 
-                        <h2>{{ obj.general_category }}</h2>
-                        <p> <span class="bold"> {{ obj.award }}           </span> {{ obj.specific_category }} </p>
+                        <h2 class="category_search">{{ obj.general_category }}</h2>
+                        <p class="award_search"> <span class="bold"> {{ obj.award }}  </p><p>         </span> {{ obj.specific_category }} </p>
                         <br>
 
-                        <p class="name"><span class="bold"> {{ obj.publication }}</span></p> 
+                        <p class="publication_search"><span class="bold"> {{ obj.publication }}</span></p> 
                         <p>  {{ obj.city }}, {{ obj.country }} </p>
 
                         <br>
 
-                        <p>  <span class="bold">{{ obj.name1 }} </span> {{ obj.title1 }}</p>
-                        <p> <span class="bold"> {{ obj.name2 }} </span> {{ obj.title2 }}</p>
-                        <p> <span class="bold"> {{ obj.name3 }} </span> {{ obj.title3 }}</p>
-                        <p> <span class="bold"> {{ obj.name4 }} </span> {{ obj.title4 }}</p>
-                        <p> <span class="bold"> {{ obj.name5 }} </span> {{ obj.title5 }}</p>
-                        <p> <span class="bold"> {{ obj.name6 }} </span> {{ obj.title6 }}</p>
-                        <p> <span class="bold"> {{ obj.name7 }} </span> {{ obj.title7 }}</p>
-                        <p> <span class="bold"> {{ obj.name8 }} </span> {{ obj.title8 }}</p>
-                        <p> <span class="bold"> {{ obj.name9 }} </span> {{ obj.title9 }}</p>
-                        <p> <span class="bold"> {{ obj.name10 }} </span> {{ obj.title10 }}</p>
+                        <p class="designer_search" >  <span class="bold">{{ obj.name1 }} </span> {{ obj.title1 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.name2 }} </span> {{ obj.title2 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.name3 }} </span> {{ obj.title3 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.name4 }} </span> {{ obj.title4 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.name5 }} </span> {{ obj.title5 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.name6 }} </span> {{ obj.title6 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.name7 }} </span> {{ obj.title7 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.name8 }} </span> {{ obj.title8 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.name9 }} </span> {{ obj.title9 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.name10 }} </span> {{ obj.title10 }}</p>
                     </div>
                 </div>
                 {% endfor %}
-            </div> -->
+            </div>
 
             <button id="button-top-scroll">Scroll to top</button>
         </article>
