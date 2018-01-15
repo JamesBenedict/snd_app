@@ -1,8 +1,11 @@
 <!doctype html>
 <html lang="en">
     <head> 
-        <link href="{{ url_for('static', filename='css/reset.css') }}" rel='stylesheet' type='text/css' />
-        <link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+        <!-- <link href="{{ url_for('static', filename='css/reset.css') }}" rel='stylesheet' type='text/css' />
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' /> -->
+        <link rel="stylesheet" href="static/css/reset.css">
+        <link rel="stylesheet" href="static/css/style.css">
+
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     </head>
 
@@ -16,55 +19,67 @@
                     <p>SHARE</p>
                 </button>
             </div>
+
            
             
         </nav>
         <article>
             <div class="sorter" >
-                <h2>Award</h2>
-                <p><input type="text" id="awardsearch" placeholder="Search Awards" /></p>
+                <p>Welcome to the Society for News Design Best of News Design database. Use the filters below to sort through the images and click on an entry to see a higher resolution image.</p>
+
+
+                
 
                 <div id="filters" class="button-group">
-                  <button class="button is-checked" data-filter="*">Show All</button>
-                  <button class="button" data-filter=".WBD">World's Best Designed</button>
-                  <button class="button" data-filter=".G">Gold</button>
-                  <button class="button" data-filter=".S">Silver</button>
-                  <button class="button" data-filter=".AE">Award of Excellence</button>
-
-                  <h2>Category</h2>
+                    <button class="is-checked" data-filter="*">Show All</button>
+                <h2>Award</h2>
+                    <p><input type="text" id="awardsearch" placeholder="Search Awards" /></p>
+                    
+                    <button class="accordion">View Options</button>
+                    
+                    <div class="panel">
+                        <button class="button" data-filter=".WBD">World's Best Designed</button>
+                        <button class="button" data-filter=".G">Gold</button>
+                        <button class="button" data-filter=".S">Silver</button>
+                        <button class="button" data-filter=".AE">Award of Excellence</button>
+                    </div>
+                <h2>Category</h2>
                     <p><input type="text" id="categorysearch" placeholder="Search Categories" /></p>
-                    <button class="button" data-filter="*">Show All</button>
-                    <button class="button" data-filter=".BNT">Breaking News Topics</button>
-                    <button class="button" data-filter=".CPD">Combination Print & Digital</button>
-                    <button class="button" data-filter=".EDC">Editorial Cartoons</button>
-                    <button class="button" data-filter=".FDP">Features Design, Pages</button>
-                    <button class="button" data-filter=".FDS">Features Design, Sections</button> 
-                    <button class="button" data-filter=".ILL">Illustration</button>
-                    <button class="button" data-filter=".IGM">Information Graphics, Multiple</button>
-                    <button class="button" data-filter=".IGS">Information Graphics, Single</button>
-                    <button class="button" data-filter=".MIS">Miscellaneous</button>                    
-                    <button class="button" data-filter=".MIL">Multiple Illustrations</button>
-                    <button class="button" data-filter=".NDP">News Design, Pages</button>
-                    <button class="button" data-filter=".NDS">News Design, Sections</button>
-                    <button class="button" data-filter=".OPI">Opinion </button>
-                    <button class="button" data-filter=".OPD">Opinion Design</button>
-                    <button class="button" data-filter=".OPS">Opinion section</button>                    
-                    <button class="button" data-filter=".PDP">Page Design, Individual Portfolio</button>                    
-                    <button class="button" data-filter=".PDS">Page Design, Staff Portfolio</button>
-                    <button class="button" data-filter=".PMP">Photography, Multiple Photos</button>
-                    <button class="button" data-filter=".PSP">Photography, Single Photos</button>
-                    <button class="button" data-filter=".RED">Redesigns</button>
-                    <button class="button" data-filter=".RPR">Reprints</button>
-                    <button class="button" data-filter=".SPC">Special Coverage</button>
-                    <button class="button" data-filter=".SNT">Special News Topics</button>
-                    <button class="button" data-filter=".SPS">Special Sections</button>
-                    <button class="button" data-filter=".WBD">World's Best Designed</button>
 
-                    <h2>Publication</h2>
-                        <p><input type="text" id="publicationsearch" placeholder="Search Publications" /></p>
+                    <button class="accordion">View Options</button>
+                    <div class="panel">
+                        <button class="button" data-filter=".BNT">Breaking News Topics</button>
+                        <button class="button" data-filter=".CPD">Combination Print &amp; Digital</button>
+                        <button class="button" data-filter=".EDC">Editorial Cartoons</button>
+                        <button class="button" data-filter=".FDP">Features Design, Pages</button>
+                        <button class="button" data-filter=".FDS">Features Design, Sections</button> 
+                        <button class="button" data-filter=".ILL">Illustration</button>
+                        <button class="button" data-filter=".IGM">Information Graphics, Multiple</button>
+                        <button class="button" data-filter=".IGS">Information Graphics, Single</button>
+                        <button class="button" data-filter=".MAG">Magazines</button>
+                        <button class="button" data-filter=".MIS">Miscellaneous</button> 
+                        <button class="button" data-filter=".MIL">Multiple Illustrations</button>
+                        <button class="button" data-filter=".NDP">News Design, Pages</button>
+                        <button class="button" data-filter=".NDS">News Design, Sections</button>
+                        <button class="button" data-filter=".OPI">Opinion </button>
+                        <button class="button" data-filter=".OPD">Opinion Design</button>
+                        <button class="button" data-filter=".OPS">Opinion section</button>                    
+                        <button class="button" data-filter=".PDP">Page Design, Individual Portfolio</button>                    
+                        <button class="button" data-filter=".PDS">Page Design, Staff Portfolio</button>
+                        <button class="button" data-filter=".PMP">Photography, Multiple Photos</button>
+                        <button class="button" data-filter=".PSP">Photography, Single Photos</button>
+                        <button class="button" data-filter=".RED">Redesigns</button>
+                        <button class="button" data-filter=".RPR">Reprints</button>
+                        <button class="button" data-filter=".SPC">Special Coverage</button>
+                        <button class="button" data-filter=".SNT">Special News Topics</button>
+                        <button class="button" data-filter=".SPS">Special Sections</button>
+                        <button class="button" data-filter=".WBD">World's Best Designed</button>
+                    </div>
+                <h2>Publication</h2>
+                    <p><input type="text" id="publicationsearch" placeholder="Search Publications" /></p>
 
-                    <h2>Designer</h2>
-                        <p><input type="text" id="designersearch" placeholder="Search Designers" /></p>
+                <h2>Designer</h2>
+                    <p><input type="text" id="designersearch" placeholder="Search Designers" /></p>
 
         
                 </div>
@@ -142,12 +157,19 @@
             <button id="button-top-scroll">Scroll to top</button>
         </article>
 
-        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+        <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
 
         <script type="text/javascript" src="{{ url_for('static', filename='js/isotope.pkgd.min.js') }}"></script>
+ -->
+<!--         <script type="text/javascript" src="{{ url_for('static', filename='js/packery-mode.pkgd.min.js') }}"></script>
+ -->    
+<!--         <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+ -->        
+        <script type="text/javascript" src="static/js/jquery-3.2.1.min.js") }}"></script>
+        <script type="text/javascript" src="static/js/isotope.pkgd.min.js") }}"></script>
+        <script type="text/javascript" src="static/js/packery-mode.pkgd.min.js") }}"></script>
+        <script type="text/javascript" src="static/js/app.js") }}"></script>
 
-        <script type="text/javascript" src="{{ url_for('static', filename='js/packery-mode.pkgd.min.js') }}"></script>
-    
-        <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+
     </body>
 </html>
