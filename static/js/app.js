@@ -3,6 +3,8 @@ var qsRegex;
 var buttonFilter;
 var searchType = "";
 var searchField = "";
+var acc = document.getElementsByClassName("accordion");
+var i;
 
 // init Isotope https://isotope.metafizzy.co/
 var $grid = $('.grid').isotope({
@@ -21,6 +23,7 @@ var $grid = $('.grid').isotope({
     } 
 
     $this = $(this);
+
     var searchResult = qsRegex ? $searchField.text().match( qsRegex ) : true;
     var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
     return searchResult && buttonResult;
@@ -39,9 +42,9 @@ $('#filters').on( 'click', 'button', function() {
   document.getElementById('categorysearch').placeholder = 'Search Categories';
   document.getElementById('publicationsearch').placeholder = 'Search Publications';
   document.getElementById('designersearch').placeholder = 'Search Designers';
-  searchField = " ";  
+  qsRegex = ""; 
   $grid.isotope();
-  return searchField;
+  return qsRegex;
 });
 
 // uses the value of the search field to filter
@@ -110,8 +113,15 @@ var $designersearch = $('#designersearch').keyup( debounce( function() {
 $('.button-group').each( function( i, buttonGroup ) {
   var $buttonGroup = $( buttonGroup );
   $buttonGroup.on( 'click', 'button', function() {
-    $buttonGroup.find('.is-checked').removeClass('is-checked');
-    $( this ).addClass('is-checked');
+  $buttonGroup.find('.is-checked').removeClass('is-checked');
+  $( this ).addClass('is-checked');
+
+    // if ( $(this).hasClass('.accordion') ){
+
+    // } else if ( $(this).hasClass('.button') ){
+
+    // }
+
   });
 });
   
@@ -149,6 +159,34 @@ $(function(){
     });
 });
 
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        // console.log(this.text())
+
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+
+$('.accordion').click(function(){
+    var $this = $(this);
+    $this.toggleClass('accordion');
+    if($this.hasClass('accordion')){
+      $this.text('View Options');     
+    } else {
+      $this.text('Hide Options');
+    }
+  });
 // https://stackoverflow.com/questions/23716866/isotope-combining-filter-by-keyword-and-search
 // http://fiddle.jshell.net/lucaspedroza/7t8mgont/
 // https://codepen.io/desandro/pen/JEojz

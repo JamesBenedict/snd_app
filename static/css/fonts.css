@@ -28,8 +28,8 @@ a {
 button {
   border: 1px solid transparent;
   border-color: #748FA4;
-  border-radius: 4px;
   background-color: #748FA4;
+  border-radius: 4px;
   width: auto;
   height: auto;
   text-align: left;
@@ -40,3 +40,20 @@ button {
 
 button:hover {
   background-color: #304659; }
+
+.is-checked {
+  background-color: #304659; }
+
+.sorter button {
+  margin: 1em 0 1em 0;
+  display: block;
+  width: 100%; }
+
+.sorter h2 {
+  font-weight: 900;
+  margin-top: 2em; }
+
+input[type="text"] {
+  font-size: 1.5em;
+  width: 100%;
+  margin: .25em 0 .25em 0; }

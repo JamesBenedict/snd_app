@@ -9,11 +9,11 @@ article{
 
 .sorter{
   // max-width: 400px;
-  background: #cccccc;
+  // background: #cccccc;
 }
 
 .grid {
-  background: #DDD;
+  // background: #DDD;
   max-width: 100%;
 }
 
@@ -49,13 +49,16 @@ article{
   visibility: hidden;
 }
 
-.sorter{
-  button{
-    margin: 1em 0 1em 0;
-    display: block;
-    width: 100%;
-  }
+.panel {
+    // padding: 0 18px;
+    background-color: white;
+    display: none;
 }
+
+
+
+
+
 @include for-size(tablet-portrait) {
     .sorter{
       width: 25%;
