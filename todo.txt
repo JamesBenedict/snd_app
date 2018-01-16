@@ -1,15 +1,17 @@
--sort database in python by award weight
--add filters for categories
--figure out what filters/sorts are needed
+Xsort database in python by award weight
+-stylize
+xadd filters for:
+	xcategories
+	xaward
+autocomplete from possibilites for search
+		maybe add dropdown filter for publication
+reset button
+add jsr support
+collapseable categories
+check about Colombiano/Columbiano
+check about opinion 
+check spelling for Repubblica
 
-Filters:
-	search for all
-	select as many awards as wanted
-	select as many categories as wanted
-	dropdown selection for designer
-	dropdown selection for publication
-
-sortby award weight
 
 
 new columns:

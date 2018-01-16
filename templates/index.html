@@ -4,7 +4,9 @@
         <!-- <link href="{{ url_for('static', filename='css/reset.css') }}" rel='stylesheet' type='text/css' />
         <link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' /> -->
         <link rel="stylesheet" href="static/css/reset.css">
+       
         <link rel="stylesheet" href="static/css/style.css">
+        <link rel="stylesheet" href="static/css/easy-autocomplete.css">
 
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     </head>
@@ -35,7 +37,7 @@
                 <h2>Award</h2>
                     <p><input type="text" id="awardsearch" placeholder="Search Awards" /></p>
                     
-                    <button class="accordion">View Options</button>
+                    <button class="accordion accordion-hide">View Options</button>
                     
                     <div class="panel">
                         <button class="button" data-filter=".WBD">World's Best Designed</button>
@@ -46,7 +48,7 @@
                 <h2>Category</h2>
                     <p><input type="text" id="categorysearch" placeholder="Search Categories" /></p>
 
-                    <button class="accordion">View Options</button>
+                    <button class="accordion accordion-hide">View Options</button>
                     <div class="panel">
                         <button class="button" data-filter=".BNT">Breaking News Topics</button>
                         <button class="button" data-filter=".CPD">Combination Print &amp; Digital</button>
@@ -168,7 +170,10 @@
         <script type="text/javascript" src="static/js/jquery-3.2.1.min.js") }}"></script>
         <script type="text/javascript" src="static/js/isotope.pkgd.min.js") }}"></script>
         <script type="text/javascript" src="static/js/packery-mode.pkgd.min.js") }}"></script>
+        <script type="text/javascript" src="static/js/jquery.easy-autocomplete.min.js") }}"></script>
+
         <script type="text/javascript" src="static/js/app.js") }}"></script>
+
 
 
     </body>
