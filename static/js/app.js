@@ -7,20 +7,20 @@ var acc = document.getElementsByClassName("accordion");
 var i;
 var $isChecked = document.getElementsByClassName('is-checked');
 
-var options = {
-  url: "static/js/json_publications.json",
-  getValue: "publication",
+// var options = {
+//   url: "static/js/json_publications.json",
+//   getValue: "publication",
 
-  list: { 
-    match: {
-      enabled: true
-    }
-  },
+//   list: { 
+//     match: {
+//       enabled: true
+//     }
+//   },
 
-  theme: "square"
-};
+//   theme: "square"
+// };
 
-$("#publicationsearch").easyAutocomplete(options);
+// $("#publicationsearch").easyAutocomplete(options);
 
 // init Isotope https://isotope.metafizzy.co/
 var $grid = $('.grid').isotope({
@@ -28,6 +28,8 @@ var $grid = $('.grid').isotope({
   layoutMode: 'packery',
   filter: function() {
     // console.log(searchType)
+    // $("#publicationsearch").easyAutocomplete(options);
+
     if (searchType == "awardSearch"){
       var $searchField = $('.award_search', this);
     } else if (searchType == "categorysearch") {
@@ -77,6 +79,7 @@ var $awardsearch = $('#awardsearch').keyup( debounce( function() {
   $grid.isotope();
   return searchType;
 }) );
+
 
 var $categorysearch = $('#categorysearch').keyup( debounce( function() {
   qsRegex = new RegExp( $categorysearch.val(), 'gi' );
@@ -200,6 +203,32 @@ $('.accordion').click(function(){
       $this.text('Hide Options');
     }
   });
+
+
+$('.share-close').click(function(){
+  // var $this = $(this);
+  var $container = $('.share-container');
+  $container.removeClass('share-show');
+  $container.addClass('share-hide')
+  // $container.toggle('share-container-hide');
+  console.log('test')
+})
+
+$('.share-container').click(function(){
+  // var $this = $(this);
+  var $container = $('.share-container');
+  $container.removeClass('share-show');
+  $container.addClass('share-hide')
+  // $container.toggle('share-container-hide');
+  console.log('test')
+})
+
+$('.share-open').click(function(){
+  var $shareMenu = $('.share-container');
+  $shareMenu.removeClass('share-hide')
+  $shareMenu.addClass('share-show');
+})
+
 
 
 // var options = {
