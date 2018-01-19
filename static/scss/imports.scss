@@ -1,7 +1,11 @@
 $snd-blue: #748FA4;
 $snd-dark-blue: #304659;
-$dark-gray: #bbb;
+// $dark-gray: #bbb;
+$dark-gray: #585858;
+// $mid-gray: #ccc;
+$mid-gray: #757575;
 $light-gray: #eee;
+
 
 @mixin for-size($size) {
   @if $size == phone {

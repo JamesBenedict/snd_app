@@ -1,8 +1,12 @@
 article {
   padding: 0 2.5% 0 2.5%; }
 
+.sorter #intro {
+  margin-bottom: 2em; }
+
 .grid {
-  max-width: 100%; }
+  max-width: 100%;
+  margin-top: 4em; }
 
 /* clear fix */
 .grid:after {
@@ -22,14 +26,6 @@ article {
 .text {
   background: white;
   padding: 1em; }
-
-#button-top-scroll {
-  position: fixed;
-  left: 0;
-  bottom: 0%;
-  width: 100%;
-  z-index: 1000;
-  visibility: hidden; }
 
 .panel {
   background-color: white;

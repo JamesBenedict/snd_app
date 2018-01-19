@@ -8,13 +8,15 @@ article{
 }
 
 .sorter{
-  // max-width: 400px;
-  // background: #cccccc;
+  #intro{
+    margin-bottom: 2em;
+  }
 }
 
 .grid {
   // background: #DDD;
   max-width: 100%;
+  margin-top: 4em;
 }
 
 /* clear fix */
@@ -40,22 +42,12 @@ article{
   padding: 1em;
 }
 
-#button-top-scroll{
-  position: fixed;
-  left: 0;
-  bottom: 0%;
-  width: 100%;
-  z-index: 1000;
-  visibility: hidden;
-}
 
 .panel {
     // padding: 0 18px;
     background-color: white;
     display: none;
 }
-
-
 
 
 

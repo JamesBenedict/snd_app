@@ -7,6 +7,7 @@ var acc = document.getElementsByClassName("accordion");
 var i;
 var $isChecked = document.getElementsByClassName('is-checked');
 
+
 // var options = {
 //   url: "static/js/json_publications.json",
 //   getValue: "publication",
@@ -48,6 +49,16 @@ var $grid = $('.grid').isotope({
   }
 });
 
+var iso = $grid.data('isotope');
+var $filterCount = $('.filter-count');
+
+function updateFilterCount() {
+  $filterCount.text( 'Showing ' + iso.filteredItems.length + ' entries' );
+}
+
+updateFilterCount();
+
+
 // checks for which filter box is selected and lays the grid out depending on the data-filter
 $('#filters').on( 'click', 'button', function() {
   buttonFilter = $( this ).attr('data-filter');
@@ -61,6 +72,7 @@ $('#filters').on( 'click', 'button', function() {
   document.getElementById('designersearch').placeholder = 'Search Designers';
   qsRegex = ""; 
   $grid.isotope();
+  updateFilterCount();
   return qsRegex;
 });
 
@@ -77,6 +89,8 @@ var $awardsearch = $('#awardsearch').keyup( debounce( function() {
   document.getElementById('designersearch').placeholder = 'Search Designers';
   $('.is-checked').removeClass('is-checked');
   $grid.isotope();
+  updateFilterCount();
+
   return searchType;
 }) );
 
@@ -93,6 +107,8 @@ var $categorysearch = $('#categorysearch').keyup( debounce( function() {
   document.getElementById('designersearch').placeholder = 'Search Designers';
   $('.is-checked').removeClass('is-checked');
   $grid.isotope();
+  updateFilterCount();
+
   return searchType;
 }) );
 
@@ -108,6 +124,8 @@ var $publicationsearch = $('#publicationsearch').keyup( debounce( function() {
   document.getElementById('designersearch').placeholder = 'Search Designers';
   $('.is-checked').removeClass('is-checked');
   $grid.isotope();
+  updateFilterCount();
+
   return searchType;
 }) );
 
@@ -123,6 +141,8 @@ var $designersearch = $('#designersearch').keyup( debounce( function() {
   document.getElementById('publicationsearch').placeholder = 'Search Publications';
   $('.is-checked').removeClass('is-checked');
   $grid.isotope();
+  updateFilterCount();
+
   return searchType;
 }) );
 
@@ -198,9 +218,9 @@ $('.accordion').click(function(){
     var $this = $(this);
     $this.toggleClass('accordion-hide');
     if($this.hasClass('accordion-hide')){
-      $this.text('View Options');     
+      $this.text('View Filters');     
     } else {
-      $this.text('Hide Options');
+      $this.text('Hide Filters');
     }
   });
 
