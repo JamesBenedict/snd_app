@@ -3,14 +3,17 @@ Xsort database in python by award weight
 xadd filters for:
 	xcategories
 	xaward
-autocomplete from possibilites for search
-		maybe add dropdown filter for publication
-reset button
+*autocomplete from possibilites for search
+	*maybe add dropdown filter for publication
+Xreset button
 add jsr support
-collapseable categories
+Xcollapseable categories
 check about Colombiano/Columbiano
 check about opinion 
 check spelling for Repubblica
+remove parathese from names for regex searching
+Xshare button functionality
+Xsorter on mobile
 
 
 
