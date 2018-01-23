@@ -57,7 +57,7 @@ button {
 
 .sorter h2 {
   font-weight: 900;
-  margin-top: 3em;
+  margin-top: 1em;
   margin-bottom: .25em;
   display: inline; }
 
@@ -118,6 +118,21 @@ input[type="text"] {
   width: 100%;
   z-index: 1000;
   visibility: hidden; }
+
+@media (min-width: 600px) {
+  .sorter .accordion {
+    display: block;
+    float: left;
+    margin-top: .25em; }
+  .sorter h2 {
+    display: block; } }
+
+@media (min-width: 900px) {
+  .sorter .accordion {
+    display: inline;
+    float: right; }
+  .sorter h2 {
+    display: inline; } }
 
 nav {
   background-color: #748FA4;
@@ -183,8 +198,10 @@ nav {
 article {
   padding: 0 2.5% 0 2.5%; }
 
-.sorter #intro {
-  margin-bottom: 2em; }
+.sorter {
+  width: 100%; }
+  .sorter #intro {
+    margin-bottom: 2em; }
 
 .grid {
   max-width: 100%;
@@ -220,11 +237,12 @@ article {
 .sorter-head-row {
   margin-top: 2em; }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
+  .grid {
+    margin-top: 0em; }
   .sorter {
     width: 25%;
     margin-right: 5%;
-    display: inline-block;
     float: left; }
   .grid {
     width: 70%;
@@ -237,19 +255,6 @@ article {
     bottom: 15%;
     width: auto;
     margin-left: 2.5%; } }
-
-@media (min-width: 900px) {
-  .grid {
-    margin-top: 0em; } }
-
-@media (min-width: 1200px) {
-  .sorter {
-    width: 15%; }
-  .grid {
-    width: 80%; }
-  .grid-item {
-    width: 23%;
-    margin: 0 1% 1% 0%; } }
 
 figure img {
   height: 90vh;

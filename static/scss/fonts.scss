@@ -88,7 +88,7 @@ button{
 	  }
 	  h2{
 	  	font-weight: 900;
-	  	margin-top: 3em;
+	  	margin-top: 1em;
 	  	margin-bottom: .25em;
 	  	display: inline;
 	  }
@@ -182,3 +182,87 @@ input[type="text"] {
   visibility: hidden;
 }
 
+
+@ include for-size(max-width: 200px){
+	.sorter{
+	  .accordion{
+		
+		
+		display: block;
+		float: left;
+		margin-top: .25em;
+		// display: block;
+
+		// margin-top: 10px;
+
+		// border: 2px solid $light-gray;
+		// color: $mid-gray;
+
+		}
+		h2{
+			display: block;
+		}
+
+}
+
+}
+@include for-size(tablet-portrait) {
+  .sorter{
+	  .accordion{
+	
+
+		display: block;
+		float:left;
+		// margin-right: 5%;
+		// // float:right;
+		// margin-right: 5%;
+
+		// margin-top: 10px;
+
+		// border: 2px solid $light-gray;
+		// color: $mid-gray;
+
+		}
+		h2{
+			display: block;
+		}
+
+}
+
+ 
+}
+
+
+
+@include for-size(tablet-landscape) {
+	.sorter{
+	  .accordion{
+	
+
+		display: inline;
+		float:right;
+		// margin-right: 5%;
+		// // float:right;
+		// margin-right: 5%;
+
+		// margin-top: 10px;
+
+		// border: 2px solid $light-gray;
+		// color: $mid-gray;
+
+		}
+		h2{
+			display: inline;
+		}
+
+}
+
+  
+}
+
+@include for-size(desktop) {
+    
+}
+@include for-size(large-desktop) {
+    
+}

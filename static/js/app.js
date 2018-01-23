@@ -76,8 +76,11 @@ $('#filters').on( 'click', 'button', function() {
   return qsRegex;
 });
 
+
+
 // uses the value of the search field to filter
 var $awardsearch = $('#awardsearch').keyup( debounce( function() {
+  // if awardsearch.val() contains "("
   qsRegex = new RegExp( $awardsearch.val(), 'gi' );
   searchType = "awardSearch";
   buttonFilter = "*";
@@ -96,7 +99,7 @@ var $awardsearch = $('#awardsearch').keyup( debounce( function() {
 
 
 var $categorysearch = $('#categorysearch').keyup( debounce( function() {
-  qsRegex = new RegExp( $categorysearch.val(), 'gi' );
+  qsRegex = new RegExp( $categorysearch.val(), 'giu' );
   searchType = "categorysearch";
   buttonFilter = "*";
   document.getElementById('awardsearch').value = '';

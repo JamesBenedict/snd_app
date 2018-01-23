@@ -1,8 +1,10 @@
 article {
   padding: 0 2.5% 0 2.5%; }
 
-.sorter #intro {
-  margin-bottom: 2em; }
+.sorter {
+  width: 100%; }
+  .sorter #intro {
+    margin-bottom: 2em; }
 
 .grid {
   max-width: 100%;
@@ -38,11 +40,12 @@ article {
 .sorter-head-row {
   margin-top: 2em; }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
+  .grid {
+    margin-top: 0em; }
   .sorter {
     width: 25%;
     margin-right: 5%;
-    display: inline-block;
     float: left; }
   .grid {
     width: 70%;
@@ -55,16 +58,3 @@ article {
     bottom: 15%;
     width: auto;
     margin-left: 2.5%; } }
-
-@media (min-width: 900px) {
-  .grid {
-    margin-top: 0em; } }
-
-@media (min-width: 1200px) {
-  .sorter {
-    width: 15%; }
-  .grid {
-    width: 80%; }
-  .grid-item {
-    width: 23%;
-    margin: 0 1% 1% 0%; } }
