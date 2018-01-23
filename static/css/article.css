@@ -29,7 +29,14 @@ article {
 
 .panel {
   background-color: white;
+  display: none;
+  margin-top: 1em; }
+
+.arrow-hidden {
   display: none; }
+
+.sorter-head-row {
+  margin-top: 2em; }
 
 @media (min-width: 600px) {
   .sorter {
@@ -48,6 +55,10 @@ article {
     bottom: 15%;
     width: auto;
     margin-left: 2.5%; } }
+
+@media (min-width: 900px) {
+  .grid {
+    margin-top: 0em; } }
 
 @media (min-width: 1200px) {
   .sorter {

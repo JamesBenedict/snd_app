@@ -214,13 +214,32 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 
+// $('.accordion').click(function(){
+//     var $this = $(this);
+//     $this.toggleClass('accordion-hide');
+//     if($this.hasClass('accordion-hide')){
+//       $this.text('View Filters');
+
+//       // $arrow.addClass('down');
+
+//     } else {
+//       $this.text('Hide Filters');
+//       $('.arrow-hidden').removeClass('arrow-hidden');
+//     }
+//   });
+
+
 $('.accordion').click(function(){
     var $this = $(this);
     $this.toggleClass('accordion-hide');
     if($this.hasClass('accordion-hide')){
-      $this.text('View Filters');     
+      $this.text('View Filters');
+      $this.remove('.arrow')
+      $this.append('<i class="arrow down"></i>');
     } else {
       $this.text('Hide Filters');
+      $this.remove('.arrow')
+      $this.append('<i class="arrow up"></i>');
     }
   });
 
@@ -229,7 +248,7 @@ $('.share-close').click(function(){
   // var $this = $(this);
   var $container = $('.share-container');
   $container.removeClass('share-show');
-  $container.addClass('share-hide')
+  $container.addClass('share-hide');
   // $container.toggle('share-container-hide');
   console.log('test')
 })

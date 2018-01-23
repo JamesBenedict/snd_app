@@ -47,9 +47,16 @@ article{
     // padding: 0 18px;
     background-color: white;
     display: none;
+    margin-top: 1em;
 }
 
+.arrow-hidden{
+  display: none;
+}
 
+.sorter-head-row{
+  margin-top: 2em;
+}
 
 @include for-size(tablet-portrait) {
     .sorter{
@@ -76,8 +83,12 @@ article{
   }
 }
 
+
+
 @include for-size(tablet-landscape) {
-  
+  .grid{
+    margin-top: 0em;
+  }
 }
 
 @include for-size(desktop) {
