@@ -78,6 +78,11 @@ nav{
 }
 
 @include for-size(tablet-landscape) {
+	.share-menu{
+	width: 400px;
+	margin: 0 auto;
+	margin-top: 25%;
+}
 		
 }
 

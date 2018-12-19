@@ -76,6 +76,9 @@ button{
 }
 
 .sorter{
+	.sorter-head-row{
+  		margin-top: 2em;
+	}
 	p{
 		margin-bottom: .5em;
 	}
@@ -83,7 +86,7 @@ button{
 	    margin: 0 0 1em 0;
 	    display: block;
 	    width: 100%;
-	    	padding: 10px 10px 10px 10px;
+		padding: 2.5% 0% 2.5% 2.5%;
 
 	  }
 	  h2{
@@ -103,7 +106,7 @@ button{
 		width: auto;
 		display: inline;
 		float:right;
-		margin-right: 5%;
+		margin-right: 2.5%;
 
 		// margin-top: 10px;
 
@@ -125,7 +128,7 @@ i {
     border-width: 0 4px 4px 0;
     display: inline-block;
     padding: 3px;
-	margin-left: 15px;
+	margin-left: 10px;
 	// margin-top: -100px;
 }
 
@@ -160,10 +163,9 @@ input[type="text"] {
 	border: 2px solid $light-gray;
 	color: $mid-gray;
   	font-size: 1em;
- 	width: 90%;
+ 	width: 95%;
  	margin: .25em 0 .25em 0;
-	padding: 10px 10px 10px 10px;
-
+	padding: 2.5% 0% 2.5% 2.5%;
 }
 
 
@@ -183,11 +185,23 @@ input[type="text"] {
 }
 
 
-@ include for-size(max-width: 200px){
+.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height: 100px;
+  }
+
+
+@media only screen and (max-width: 200px) {
 	.sorter{
 	  .accordion{
-		
-		
 		display: block;
 		float: left;
 		margin-top: .25em;
@@ -197,15 +211,15 @@ input[type="text"] {
 
 		// border: 2px solid $light-gray;
 		// color: $mid-gray;
-
 		}
 		h2{
 			display: block;
 		}
-
+	}
 }
 
-}
+
+
 @include for-size(tablet-portrait) {
   .sorter{
 	  .accordion{
@@ -266,3 +280,5 @@ input[type="text"] {
 @include for-size(large-desktop) {
     
 }
+
+
