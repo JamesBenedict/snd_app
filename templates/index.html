@@ -2,10 +2,10 @@
 <html lang="en">
     <head> 
         <link rel="stylesheet" href="static/css/reset.css">
-       
         <link rel="stylesheet" href="static/css/style.css">
-
+        <link rel="stylesheet" href="static/css/jquery-ui.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+        <meta content="width=device-width" name="viewport">
     </head>
 
     <body>
@@ -41,32 +41,30 @@
             <div class="sorter" >
                 <p id="intro">Welcome to the database for the Society for News Design's Best of News Design. Use the filters below to search through the images and click on an entry to see a higher resolution copy.</p>
 
-            
-
-
-                
-
                 <div id="filters" class="button-group">
                     <p class="filter-count">Showing 1144 entries</p>
                     <button class="is-checked" data-filter="*">Show All</button>
 
                     <div class="sorter-head-row"></div>                    
 
-                <h2>Award</h2>
-                  <p class="accordion accordion-hide">View Filters <i class="arrow down"></i> </p> 
-                <div class="panel">
+                    <h2>Award</h2>
+                        <p class="accordion accordion-hide">View Filters <i class="arrow down"></i> </p> 
+                    <div class="panel">
                         <button class="button" data-filter=".WBD">World's Best Designed</button>
                         <button class="button" data-filter=".G">Gold</button>
                         <button class="button" data-filter=".S">Silver</button>
                         <button class="button" data-filter=".JSRTrue">Judge's Special Recognition</button>
                         <button class="button" data-filter=".AE">Award of Excellence</button>
-                    </div>
-                    <p><input type="text" id="awardsearch" placeholder="Search Awards" /></p>
+                        </div>
+                        
+                        <input type="text" id="awardsearch" placeholder="Search Awards" />
                     
 
-                <div class="sorter-head-row"></div>                    
-                <h2>Category</h2>
                     
+                    <div class="sorter-head-row"></div>                    
+                    <h2>Category</h2>
+                    
+                   
                    <p class="accordion accordion-hide">View Filters <i class="arrow down"></i> </p>
 
                     <div class="panel">
@@ -97,18 +95,22 @@
                         <button class="button" data-filter=".SPS">Special Sections</button>
                         <button class="button" data-filter=".WBD">World's Best Designed</button>
                     </div>
-
-                    <p><input type="text" id="categorysearch" placeholder="Search Categories" /></p>
+                    
+                    <div class="ui-widget">
+                        <input type="text" id="categorysearch" placeholder="Search Categories" />
+                    </div>
 
                 <div class="sorter-head-row"></div>                    
 
                 <h2>Publication</h2>
+                <div class="ui-widget">
                     <p><input type="text" id="publicationsearch" placeholder="Search Publications" /></p>
-               
+                </div>
+                
                 <div class="sorter-head-row"></div>                    
 
                 <h2>Designer</h2>
-                    <p><input type="text" id="designersearch" placeholder="Search Designers" /></p>
+                    <input type="text" id="designersearch" placeholder="Search Designers" />
 
         
                 </div>
@@ -117,67 +119,37 @@
             
             <!-- container for isotope -->
             <div class="grid">
-                <!-- <div class="grid-item G">
-                    <p class="award_search">Gold
-                    </p>
-                    <p>Test phrase with World's Best Designed in it</p>
-                </div>
-
-                <div class="grid-item WBD">
-                    <p class="award_search">World's Best Designed</p>
-                    <p>xx</p>
-                </div>
-
-                <div class="grid-item S">
-                    <p class="award_search">Silver</p>
-                    <p>Test phrase with World's Best Designed in it</p>
-                </div>
-
-                <div class="grid-item AE">
-                    <p class="award_search">Award of Excellence</p>
-                    <p>Test phrase with World's Best Designed in it</p>
-                </div>
-
-                <div class="grid-item WBD">
-                    <p class="award_search">World's Best Designed</p>
-                    <p>yy</p>
-                </div>
-
-                <div class="grid-item G">
-                    <p class="award_search">Gold</p>
-                    <p>Test phrase with World's Best Designed in it</p>
-                </div> -->
 
                 <!-- Below is used for the actual app -->
                 {% for obj in object_list %}
                 <div class="grid-item {{ obj.award_single_word }} {{ obj.general_category_single_word }} {{ obj.is_JSR }}">
                    
-                   <a href="{{ obj.ref }}/"><img src="static/img/entries_lowResolution/{{ obj.ref }}.jpg" onerror="this.style.display='none'"/></a>
+                   <a href="{{ obj.REF }}/"><img src="static/img/entries_lowResolution/{{ obj.REF }}.jpg" onerror="this.style.display='none'"/></a>
                     
                     
                     <div class="text">
                    
 <!--                         <a href="{{ obj.ref }}/" class="ref">{{ obj.ref }}</a>
  -->
-                        <h2 class="category_search">{{ obj.general_category }}</h2>
-                        <p class="award_search"> <span class="bold"> {{ obj.award }}  </p><p>         </span> {{ obj.specific_category }} </p>
+                        <h2 class="category_search">{{ obj.general_category}}</h2>
+                        <p class="award_search"> <span class="bold"> {{ obj.AWARD }}  </p><p>         </span> {{ obj.specific_category }} </p>
                         <br>
 
-                        <p class="publication_search"><span class="bold"> {{ obj.publication }}</span></p> 
-                        <p>  {{ obj.city }}, {{ obj.country }} </p>
+                        <p class="publication_search"><span class="bold"> {{ obj.PUBLICATION }}</span></p> 
+                        <p>  {{ obj.CITY }}, {{ obj.COUNTRY }} </p>
 
                         <br>
 
-                        <p class="designer_search" >  <span class="bold">{{ obj.name1 }} </span> {{ obj.title1 }}</p>
-                        <p class="designer_search"> <span class="bold"> {{ obj.name2 }} </span> {{ obj.title2 }}</p>
-                        <p class="designer_search"> <span class="bold"> {{ obj.name3 }} </span> {{ obj.title3 }}</p>
-                        <p class="designer_search"> <span class="bold"> {{ obj.name4 }} </span> {{ obj.title4 }}</p>
-                        <p class="designer_search"> <span class="bold"> {{ obj.name5 }} </span> {{ obj.title5 }}</p>
-                        <p class="designer_search"> <span class="bold"> {{ obj.name6 }} </span> {{ obj.title6 }}</p>
-                        <p class="designer_search"> <span class="bold"> {{ obj.name7 }} </span> {{ obj.title7 }}</p>
-                        <p class="designer_search"> <span class="bold"> {{ obj.name8 }} </span> {{ obj.title8 }}</p>
-                        <p class="designer_search"> <span class="bold"> {{ obj.name9 }} </span> {{ obj.title9 }}</p>
-                        <p class="designer_search"> <span class="bold"> {{ obj.name10 }} </span> {{ obj.title10 }}</p>
+                        <p class="designer_search" >  <span class="bold">{{ obj.Name1 }} </span> {{ obj.Title1 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.Name2 }} </span> {{ obj.Title2 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.Name3 }} </span> {{ obj.Title3 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.Name4 }} </span> {{ obj.Title4 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.Name5 }} </span> {{ obj.Title5 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.Name6 }} </span> {{ obj.Title6 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.Name7 }} </span> {{ obj.Title7 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.Name8 }} </span> {{ obj.Title8 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.Name9 }} </span> {{ obj.Title9 }}</p>
+                        <p class="designer_search"> <span class="bold"> {{ obj.Name10 }} </span> {{ obj.Title10 }}</p>
                     </div>
                 </div>
                 {% endfor %}
@@ -185,10 +157,16 @@
 
             <button id="button-top-scroll">Scroll to top</button>
         </article>
+<script type="text/javascript" src="static/js/jquery-3.2.1.min.js") }}"></script>
 
-        <script type="text/javascript" src="static/js/jquery-3.2.1.min.js") }}"></script>
+
+<script type="text/javascript" src="static/js/jquery-ui.js") }}"></script>
+
+
+
         <script type="text/javascript" src="static/js/isotope.pkgd.min.js") }}"></script>
         <script type="text/javascript" src="static/js/packery-mode.pkgd.min.js") }}"></script>
+        
         <script type="text/javascript" src="static/js/app.js") }}"></script>
 
     </body>

@@ -8,33 +8,79 @@
     <body>
 
         <figure>
-    	   <a href="/static/img/entries/{{ object.ref }}.jpg/"><img src="/static/img/entries/{{ object.ref }}.jpg" onerror="this.style.display='none'"/></a>
-            <figcaption><a href="/static/img/entries/{{ object.ref }}.jpg/">View fullscreen image</a>
+    <a href="/static/img/entries/{{ object.REF }}B.jpg/"><img src="/static/img/entries/{{ object.REF }}.jpg" onerror="this.style.display='none'"/></a>
+            <figcaption><a href="/static/img/entries/{{ object.REF }}.jpg/">View fullscreen image</a>
+            </figcaption>
+
+            {% if object.multi %}
+   
+
+            <a href="/static/img/entries/{{ object.REF }}.jpg/"><img src="/static/img/entries/{{ object.REF }}A.jpg" onerror="this.style.display='none'"/></a>
+            <figcaption><a href="/static/img/entries/{{ object.REF }}.jpg/">View fullscreen image</a>
+            </figcaption>
+{% endif %}
+    	  
+        </figure>
+
+
+
+            {% if object.multi %}
+
+         <a href="/static/img/entries/{{ object.REF }}C.jpg/"><img src="/static/img/entries/{{ object.REF }}B.jpg" onerror="this.style.display='none'"/></a>
+            <figcaption><a href="/static/img/entries/{{ object.REF }}.jpg/">View fullscreen image</a>
+            </figcaption>
+
+            {% endif %}
+
+        
+        <!-- <figure>
+           <a href="/static/img/entries/{{ object.ref }}A.jpg/"><img src="/static/img/entries/{{ object.ref }}.jpg" onerror="this.remove();"/></a>
+            <figcaption><a href="/static/img/entries/{{ object.ref }}A.jpg/">View fullscreen image</a>
             </figcaption>
         </figure>
-        <!-- <a href="{{ object.ref }}/"><img src="/static/img/entries/{{ object.ref }}A.jpg" onerror="this.style.display='none'"/></a> -->
+
+        <figure>
+           <a href="/static/img/entries/{{ object.ref }}B.jpg/"><img src="/static/img/entries/{{ object.ref }}B.jpg" onerror="this.remove();"/></a>
+            <figcaption><a href="/static/img/entries/{{ object.ref }}B.jpg/">View fullscreen image</a>
+            </figcaption>
+        </figure>
+
+        <figure>
+           <a href="/static/img/entries/{{ object.ref }}C.jpg/"><img src="/static/img/entries/{{ object.ref }}C.jpg" onerror="this.remove();"/></a>
+            <figcaption><a href="/static/img/entries/{{ object.ref }}C.jpg/">View fullscreen image</a>
+            </figcaption>
+        </figure>
+ -->
+
+<!-- 
+        <a href="{{ object.ref }}/"><img src="/static/img/entries/{{ object.ref }}A.jpg" onerror="this.remove();"/></a>
+        <a href="{{ object.ref }}/"><img src="/static/img/entries/{{ object.ref }}B.jpg" onerror="this.remove();"/></a>
+        <a href="{{ object.ref }}/"><img src="/static/img/entries/{{ object.ref }}C.jpg" onerror="this.remove();"/></a>
+ -->
+<!--         <a href="{{ object.ref }}/"><img src="/static/img/entries/{{ object.ref }}B.jpg" onerror="this.style.display='none'"/></a>
+        <a href="{{ object.ref }}/"><img src="/static/img/entries/{{ object.ref }}C.jpg" onerror="this.style.display='none'"/></a> -->
 
         <div class="details_text">
 
                         <h2>{{ object.general_category }}</h2>
-                        <p> <span class="bold"> {{ object.award }}           </span> {{ object.specific_category }} </p>
+                        <p> <span class="bold"> {{ object.AWARD }}           </span> {{ object.specific_category }} </p>
                         <br>
 
-                        <p><span class="bold"> {{ object.publication }}</span></p> 
-                        <p>  {{ object.city }}, {{ object.country }} </p>
+                        <p><span class="bold"> {{ object.PUBLICATION }}</span></p> 
+                        <p>  {{ object.CITY }}, {{ object.COUNTRY }} </p>
 
                         <br>
 
-                        <p>  <span class="bold">{{ object.name1 }} </span> {{ object.title1 }}</p>
-                        <p> <span class="bold"> {{ object.name2 }} </span> {{ object.title2 }}</p>
-                        <p> <span class="bold"> {{ object.name3 }} </span> {{ object.title3 }}</p>
-                        <p> <span class="bold"> {{ object.name4 }} </span> {{ object.title4 }}</p>
-                        <p> <span class="bold"> {{ object.name5 }} </span> {{ object.title5 }}</p>
-                        <p> <span class="bold"> {{ object.name6 }} </span> {{ object.title6 }}</p>
-                        <p> <span class="bold"> {{ object.name7 }} </span> {{ object.title7 }}</p>
-                        <p> <span class="bold"> {{ object.name8 }} </span> {{ object.title8 }}</p>
-                        <p> <span class="bold"> {{ object.name9 }} </span> {{ object.title9 }}</p>
-                        <p> <span class="bold"> {{ object.name10 }} </span> {{ object.title10 }}</p>
+                        <p>  <span class="bold">{{ object.Name1 }} </span> {{ object.Title1 }}</p>
+                        <p> <span class="bold"> {{ object.Name2 }} </span> {{ object.Title2 }}</p>
+                        <p> <span class="bold"> {{ object.Name3 }} </span> {{ object.Title3 }}</p>
+                        <p> <span class="bold"> {{ object.Name4 }} </span> {{ object.Title4 }}</p>
+                        <p> <span class="bold"> {{ object.Name5 }} </span> {{ object.Title5 }}</p>
+                        <p> <span class="bold"> {{ object.Name6 }} </span> {{ object.Title6 }}</p>
+                        <p> <span class="bold"> {{ object.Name7 }} </span> {{ object.Title7 }}</p>
+                        <p> <span class="bold"> {{ object.Name8 }} </span> {{ object.Title8 }}</p>
+                        <p> <span class="bold"> {{ object.Name9 }} </span> {{ object.Title9 }}</p>
+                        <p> <span class="bold"> {{ object.Name10 }} </span> {{ object.Title10 }}</p>
                     </div>
     </body>
 </html>
