@@ -58,3 +58,9 @@ nav {
   .share-text a {
     display: block;
     margin-bottom: 1em; }
+
+@media (min-width: 900px) {
+  .share-menu {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 25%; } }

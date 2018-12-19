@@ -46,6 +46,9 @@ button {
   border-color: #304659;
   color: white; }
 
+.sorter .sorter-head-row {
+  margin-top: 2em; }
+
 .sorter p {
   margin-bottom: .5em; }
 
@@ -53,7 +56,7 @@ button {
   margin: 0 0 1em 0;
   display: block;
   width: 100%;
-  padding: 10px 10px 10px 10px; }
+  padding: 2.5% 0% 2.5% 2.5%; }
 
 .sorter h2 {
   font-weight: 900;
@@ -69,14 +72,14 @@ button {
   width: auto;
   display: inline;
   float: right;
-  margin-right: 5%; }
+  margin-right: 2.5%; }
 
 i {
   border: solid #757575;
   border-width: 0 4px 4px 0;
   display: inline-block;
   padding: 3px;
-  margin-left: 15px; }
+  margin-left: 10px; }
 
 .down {
   transform: rotate(45deg);
@@ -102,9 +105,9 @@ input[type="text"] {
   border: 2px solid #eee;
   color: #757575;
   font-size: 1em;
-  width: 90%;
+  width: 95%;
   margin: .25em 0 .25em 0;
-  padding: 10px 10px 10px 10px; }
+  padding: 2.5% 0% 2.5% 2.5%; }
 
 #button-top-scroll {
   background-color: #748FA4;
@@ -119,11 +122,30 @@ input[type="text"] {
   z-index: 1000;
   visibility: hidden; }
 
-@media (min-width: 600px) {
+.ui-autocomplete {
+  max-height: 100px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden; }
+
+/* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+* html .ui-autocomplete {
+  height: 100px; }
+
+@media only screen and (max-width: 200px) {
   .sorter .accordion {
     display: block;
     float: left;
     margin-top: .25em; }
+  .sorter h2 {
+    display: block; } }
+
+@media (min-width: 600px) {
+  .sorter .accordion {
+    display: block;
+    float: left; }
   .sorter h2 {
     display: block; } }
 
@@ -195,6 +217,12 @@ nav {
     display: block;
     margin-bottom: 1em; }
 
+@media (min-width: 900px) {
+  .share-menu {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 25%; } }
+
 article {
   padding: 0 2.5% 0 2.5%; }
 
@@ -233,9 +261,6 @@ article {
 
 .arrow-hidden {
   display: none; }
-
-.sorter-head-row {
-  margin-top: 2em; }
 
 @media (min-width: 900px) {
   .grid {

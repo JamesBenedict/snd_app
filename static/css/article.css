@@ -37,9 +37,6 @@ article {
 .arrow-hidden {
   display: none; }
 
-.sorter-head-row {
-  margin-top: 2em; }
-
 @media (min-width: 900px) {
   .grid {
     margin-top: 0em; }
